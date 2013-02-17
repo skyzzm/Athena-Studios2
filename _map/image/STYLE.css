@@ -1,0 +1,75 @@
+A {
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0099ff
+}
+A:link {
+	COLOR: #205064
+}
+A:visited {
+	COLOR: #006699
+}
+BODY {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: ËÎÌו; BACKGROUND-COLOR: #fbfdff; TEXT-DECORATION: none
+}
+TD {
+	FONT-SIZE: 9pt; FONT-FAMILY: ËÎÌו
+}
+INPUT {
+	FONT-SIZE: 9pt; HEIGHT: 20px
+}
+BUTTON {
+	FONT-SIZE: 9pt; HEIGHT: 20px
+}
+SELECT {
+	FONT-SIZE: 9pt; HEIGHT: 20px
+}
+.border {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+.border2 {
+	BORDER-RIGHT: #999999 1px solid; BACKGROUND: #fef8ed; BORDER-LEFT: #999999 1px solid
+}
+.title {
+	BACKGROUND: #f6f6f6
+}
+.title_left {
+	BACKGROUND: url(images/left_bg.gif)
+}
+.title_right {
+	BACKGROUND: url(images/right_bg.gif)
+}
+.title_main {
+	BACKGROUND: url(Images/jiaodian_bg.gif)
+}
+.tdbg {
+	BACKGROUND: #ffffff; LINE-HEIGHT: 120%
+}
+.tdbg_left {
+	BACKGROUND: #fef8ed; LINE-HEIGHT: 150%
+}
+.tdbg_right {
+	BACKGROUND: #eaf1fb; LINE-HEIGHT: 150%
+}
+.tdbg_main {
+	BACKGROUND: #ffffff; LINE-HEIGHT: 150%
+}
+.topborder {
+	BORDER-RIGHT: #6687ba 1px solid; BORDER-LEFT: #6687ba 1px solid; WIDTH: 760px; BORDER-BOTTOM: #6595d6 1px solid
+}
+.nav_top {
+	BACKGROUND-IMAGE: url(Skin/1/topbg.gif)
+}
+.nav_bottom {
+	BACKGROUND-IMAGE: url(Skin/1/bottombg.gif)
+}
+.nav_menu {
+	BACKGROUND: url(Skin/1/topBar_bg.gif)
+}
+.menu {
+	BORDER-RIGHT: 1px; BORDER-TOP: 1px; BORDER-LEFT: 1px; WIDTH: 97%; BORDER-BOTTOM: 1px; BACKGROUND-COLOR: #f0f9ff
+}
+TD.MenuBody {
+	BACKGROUND-COLOR: #f0f9ff
+}

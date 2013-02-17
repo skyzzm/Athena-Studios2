@@ -1,0 +1,672 @@
+<html>
+
+<head>
+
+<title>Athena</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<link rel="stylesheet" href="../js_css/treelogic.css">
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js_css/dynlayer.js"></SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js_css/dynlayer-glide.js"></SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript" SRC="../js_css/reescal.js"></SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+var zona=0;
+
+var multiplicador=0;
+
+var numeroejecuciones=0;
+
+var velocidad=0;
+
+var activo=0;
+
+var numerodenoticias=6
+
+var topeizda=-(numerodenoticias-1)*375-150;
+
+var topedcha=115;
+
+
+
+function init() 
+
+{
+
+	setTimeout('finaliza()',1000)
+
+	test();
+
+	DynLayerInit();
+
+	mueveinicial();
+
+	CambiaCabeza();
+
+}
+
+
+
+function veloon(i)
+
+{
+
+if (i==-3) menos3on.show(); else menos3on.hide();
+
+if (i==-2) menos2on.show(); else menos2on.hide();
+
+if (i==-1) menos1on.show(); else menos1on.hide();
+
+if (i==0) neutroon.show(); else neutroon.hide();
+
+if (i==1) mas1on.show(); else mas1on.hide();
+
+if (i==2) mas2on.show(); else mas2on.hide();
+
+if (i==3) mas3on.show(); else mas3on.hide();
+
+if (i<0) parent.parent.paisarelleno.ojosclinotizda(); else parent.parent.paisarelleno.ojosclinothizda();
+
+if (i>0) parent.parent.paisarelleno.ojosclinotdcha(); else parent.parent.paisarelleno.ojosclinothdcha();
+
+}
+
+
+
+function test()
+
+{
+
+	numeroejecuciones++;
+
+	if (numeroejecuciones>0) setTimeout('test()',10);
+
+}
+
+
+
+function finaliza()
+
+{
+
+	multiplicador=100/numeroejecuciones;
+
+	numeroejecuciones=-1000;
+
+}
+
+
+
+function pos_xy_init()
+
+{
+
+	document.onmousemove = mouseMove
+
+	if (is.ns) document.captureEvents(Event.MOUSEMOVE)
+
+}
+
+
+
+function CambiaCabeza()
+
+{
+
+	if (activo==1)
+
+	//si activo es 1 entonces ESTA FUERA del frame superior
+
+	{
+
+		if (!is.ns) parent.parent.paisarelleno.document.cabeza.src=parent.parent.paisarelleno.p_ani_clientes_off.src;
+
+		else parent.parent.paisarelleno.document.cuerpo.document.cabeza.src=parent.parent.paisarelleno.p_ani_clientes_off.src;
+
+/*	
+
+		if (!is.ns) parent.parent.paisarelleno.document.cabeza.src='./images/ani_clientes_off.gif';
+
+		else parent.parent.paisarelleno.document.cuerpo.document.cabeza.src='./images/ani_clientes_off.gif';
+
+*/
+
+	}
+
+	else 
+
+	{
+
+		if (!is.ns) parent.parent.paisarelleno.document.cabeza.src='./images/ani_clientes.gif';			
+
+		else parent.parent.paisarelleno.document.cuerpo.document.cabeza.src='./images/ani_clientes.gif';
+
+	}
+
+}
+
+
+
+function mouseMove(e)
+
+{
+
+	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+
+	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+
+	if (cargado) 
+
+	{
+
+		if  ((y>10)&&(y<120)) 
+
+		{	
+
+			if (x<70) zona=-3;
+
+			else if(x<150) zona=-2;
+
+			else if(x<250) zona=-1;
+
+			else if(x<510) zona=0;
+
+			else if(x<610) zona=1;
+
+			else if(x<690) zona=2;
+
+			else if(x<761) zona=3;
+
+			if (activo==0) CambiaCabeza();
+
+			velocidad=zona*multiplicador;
+
+			activo=1;
+
+		}			
+
+		else 
+
+		{
+
+			if (activo==1) CambiaCabeza();
+
+			activo=0;zona=0;
+
+		}
+
+		veloon(zona);
+
+	}	
+
+}
+
+
+
+var cargado=1;
+
+
+
+function mueveinicial()
+
+{
+
+noticiasContent.glideTo('fast','slow',topedcha,10,10,100);
+
+pos_xy_init();
+
+mueve();
+
+}
+
+
+
+function mueve()
+
+{
+
+	if (activo==1)
+
+	{
+
+	noticiasContent.moveBy(velocidad,null);
+
+	if ((velocidad<0)&&(noticiasContent.x<topeizda)) noticiasContent.x=topeizda;
+
+	if ((velocidad>0)&&(noticiasContent.x>topedcha)) noticiasContent.x=topedcha;
+
+	} 
+
+	setTimeout('mueve()',20);
+
+}
+
+
+
+</SCRIPT>
+
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+
+
+
+<body bgcolor="#71B4FF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" onload="init();">
+
+<div id="menos3onDiv" style="position:absolute; width:20px; height:11px; z-index:18; left: 290px; top: 136px; visibility: hidden"><img src="../images/_3.gif" width="20" height="11"></div>
+
+<div id="menos2onDiv" style="position:absolute; width:24px; height:11px; z-index:19; left: 310px; top: 136px; visibility: hidden"><img src="../images/_2.gif" width="24" height="11"></div>
+
+<div id="menos1onDiv" style="position:absolute; width:24px; height:11px; z-index:20; left: 330px; top: 136px; visibility: hidden"><img src="../images/_1.gif" width="24" height="11"></div>
+
+<div id="neutroonDiv" style="position:absolute; width:26px; height:11px; z-index:21; left: 350px; top: 136px; visibility: hidden"><img src="../images/0.gif" width="26" height="11"></div>
+
+<div id="mas1onDiv" style="position:absolute; width:24px; height:11px; z-index:22; left: 369px; top: 136px; visibility: hidden"><img src="../images/1.gif" width="24" height="11"></div>
+
+<div id="mas2onDiv" style="position:absolute; width:22px; height:11px; z-index:23; left: 390px; top: 136px; visibility: hidden"><img src="../images/2.gif" width="22" height="11"></div>
+
+<div id="mas3onDiv" style="position:absolute; width:20px; height:11px; z-index:24; left: 410px; top: 136px; visibility: hidden"><img src="../images/3.gif" width="21" height="11"></div>
+
+<div id="menos3" style="position:absolute; width:20px; height:11px; z-index:12; left: 295px; top: 222px; visibility: visible"><img src="../images/_3off.gif" width="20" height="11"></div>
+
+<div id="menos2" style="position:absolute; width:24px; height:11px; z-index:13; left: 316px; top: 222px; visibility: visible"><img src="../images/_2off.gif" width="24" height="11"></div>
+
+<div id="menos1" style="position:absolute; width:24px; height:11px; z-index:14; left: 341px; top: 222px; visibility: visible"><img src="../images/_1off.gif" width="24" height="11"></div>
+
+<div id="neutro" style="position:absolute; width:26px; height:11px; z-index:15; left: 365px; top: 222px; visibility: visible"><img src="../images/0off.gif" width="26" height="11"></div>
+
+<div id="mas1" style="position:absolute; width:24px; height:11px; z-index:16; left: 392px; top: 222px; visibility: visible"><img src="../images/1off.gif" width="24" height="11"></div>
+
+<div id="mas2" style="position:absolute; width:22px; height:11px; z-index:17; left: 416px; top: 222px; visibility: visible"><img src="../images/2off.gif" width="22" height="11"></div>
+
+<div id="mas3" style="position:absolute; width:20px; height:11px; z-index:11; left: 440px; top: 222px; visibility: visible"><img src="../images/3off.gif" width="21" height="11"></div>
+
+
+
+<div id="maskizda" style="position:absolute; width:145px; height:150px; z-index:25; top: 2px; background-image:  url('../images/maskaraizda_sc.gif'); layer-background-image:  url(../images/maskaraizda_sc.gif); border: 0px none #000000; left: 1px; visibility: visible"></div>
+
+
+
+<div id="maskder" style="position:absolute; width:145px; height:150px; z-index:26; top: 1px; background-image:  url('../images/maskarader_sc.gif'); layer-background-image:  url(../images/maskarader_sc.gif); left: 615px; border: 0px none #000000; visibility: visible"></div>
+
+
+
+<div id="noticiasContentDiv" style="position:absolute; left: 762px; top: 1px; width: 1000px; height: 120px; z-index: 4; visibility: visible"> 
+
+<table border="0" cellspacing="0" cellpadding="0" height="110">
+
+	<tr> 
+
+		<td width="25"><img src="../images/topeizda.gif" width="50" height="134"></td>
+
+<!--  cuadro inicial -->
+
+		<td height="110" rowspan="2" valign="top" width="375"> 
+
+      		<table width="375" border="0" cellspacing="0" cellpadding="0" height="110">
+
+    			<tr> 
+
+      				<td bgcolor="#99ccff">
+
+              		<table border="0" cellspacing="1" cellpadding="0" width="400">
+
+                		<tr> 
+
+                  			<td height="15" class="verdana8" bgcolor="#0797ed" colspan="2" align="center">　</td>
+
+                		</tr>
+
+                		<tr> 
+
+                  			<td width="375" height="80" colspan="2" align="center" valign="middle" bgcolor="#71B4FF" class="verdana8 style1"><a href="../../media/Athena.exe">Athena播放器</a></td>
+
+                		</tr>
+
+                		<tr> 
+
+                  			<td align="right" height="15" class="verdana8" bgcolor="#71B4FF" colspan="2"><font color="#FFFFFF"> Athena Studios&#8482;</font>　</td>
+
+               			</tr>
+
+              		</table>
+
+      				</td>
+
+    			</tr>
+
+    		</table>
+
+      	</td>
+
+     	<td width="25"><img src="../images/ico_dcha_on.gif" width="9" height="9" hspace="13"><br><br></td>
+
+
+
+<!--contenido1-->
+
+
+
+      
+
+		<td height="110" rowspan="2" valign="top" width="375"> 
+
+      		<table width="375" border="0" cellspacing="0" cellpadding="0" height="110">
+
+				<tr> 
+
+      				<td bgcolor="#99ccff">
+
+             		<table border="0" cellspacing="1" cellpadding="2" width="400">
+
+                		<tr> 
+
+                  			<td height="15" class="verdana8" bgcolor="#0797ed" align="center"><font color="#FFFFFF">continents</font></td>
+
+	                	</tr>
+
+	                	<tr> 
+
+   				          	<td width="375" align="left" valign="top" height="80" class="verdana8" bgcolor="#71B4FF" colspan="2"><span class="style1">7.28.2004,the whole world was stricken--Fransis Crick died. We just here set a page to commemorate him--the greatest biologist in 20th centrury....</span>
+			          	    <p></p>
+			          	    <p>&nbsp;</p></td>
+
+	                	</tr>
+
+		                <tr> 
+
+								<td align="right" height="15" class="verdana8" bgcolor="#71B4FF" colspan="2">	                    		<font color="#FFFFFF">+Athena Studios&#8482;</font> 
+
+	                  		</td>
+
+	               		</tr>
+
+	              	</table>
+
+	      			</td>
+
+	    		</tr>
+
+	    	</table>
+
+		</td>
+
+	   <td width="25"><img src="../images/ico_dcha_on.gif" width="9" height="9" hspace="13"><br><br></td>
+
+	
+
+      
+
+		<td height="110" rowspan="2" valign="top" width="375"> 
+
+      		<table width="375" border="0" cellspacing="0" cellpadding="0" height="110">
+
+				<tr> 
+
+      				<td bgcolor="#99ccff">
+
+             		<table border="0" cellspacing="1" cellpadding="2" width="400">
+
+                		<tr> 
+
+                  			<td height="15" class="verdana8" bgcolor="#0797ed" align="center"><font color="#FFFFFF">cookies</font></td>
+
+	                	</tr>
+
+	                	<tr> 
+
+   				          	<td width="375" height="80" colspan="2" align="left" valign="top" bgcolor="#71B4FF" class="verdana8 style1"><p>Athena Studios For your hapiness...... For your favorites...... Show you love...... In days.... </p>
+			          	    <p>&nbsp;</p></td>
+
+	                	</tr>
+
+		                <tr> 
+
+								<td align="right" height="15" class="verdana8" bgcolor="#71B4FF" colspan="2">	                    		<font color="#FFFFFF">+Athena <font color="#FFFFFF">Studios&#8482;</font></font> 
+
+	                  		</td>
+
+	               		</tr>
+
+	              	</table>
+
+	      			</td>
+
+	    		</tr>
+
+	    	</table>
+
+		</td>
+
+	   <td width="25"><img src="../images/ico_dcha_on.gif" width="9" height="9" hspace="13"><br><br></td>
+
+	
+
+      
+
+		<td height="110" rowspan="2" valign="top" width="375"> 
+
+      		<table width="375" border="0" cellspacing="0" cellpadding="0" height="110">
+
+				<tr> 
+
+      				<td bgcolor="#99ccff">
+
+             		<table border="0" cellspacing="1" cellpadding="2" width="400">
+
+                		<tr> 
+
+                  			<td height="15" class="verdana8" bgcolor="#0797ed" align="center"><font color="#FFFFFF">pictures</font></td>
+
+	                	</tr>
+
+	                	<tr> 
+
+   				          	<td width="375" align="left" valign="top" height="80" class="verdana8" bgcolor="#71B4FF" colspan="2">&nbsp;</td>
+
+	                	</tr>
+
+		                <tr> 
+
+								<td align="right" height="15" class="verdana8" bgcolor="#71B4FF" colspan="2">	                    		<font color="#FFFFFF">+</font><font color="#FFFFFF">Athena Studios&#8482;</font></td>
+
+	               		</tr>
+
+	              	</table>
+
+	      			</td>
+
+	    		</tr>
+
+	    	</table>
+
+		</td>
+
+	   <td width="25"><img src="../images/ico_dcha_on.gif" width="9" height="9" hspace="13"><br><br></td>
+
+	
+
+      
+
+		<td height="110" rowspan="2" valign="top" width="375"> 
+
+      		<table width="375" border="0" cellspacing="0" cellpadding="0" height="110">
+
+				<tr> 
+
+      				<td bgcolor="#99ccff">
+
+             		<table border="0" cellspacing="1" cellpadding="2" width="400">
+
+                		<tr> 
+
+                  			<td height="15" class="verdana8" bgcolor="#0797ed" align="center"><font color="#FFFFFF">Athena Studios Albums </font></td>
+
+	                	</tr>
+
+	                	<tr> 
+
+   				          	<td width="375" align="left" valign="top" height="80" class="verdana8" bgcolor="#71B4FF" colspan="2"><p class="style1"><img src="../images/HAMASJ_SCD-0758.jpg" width="65" height="65" align="left">Ayumi Hamasaki &lt;Inspire&gt;</p>
+   				          	  <p class="style1">come out : 2004.11 <a href="../../media/01%20-%20Inspire-Original%20Mix-Mixed%20by%20Koji%20Morimoto.mp3">listen</a></p>
+		          	        <p align="center" class="style1">&nbsp; </p></td>
+
+	                	</tr>
+
+		                <tr> 
+
+								<td align="right" height="15" class="verdana8" bgcolor="#71B4FF" colspan="2">	                    		<font color="#FFFFFF">+&nbsp;</font><font color="#FFFFFF">Athena</font> 
+
+	                    		<a href="http://www.feve.es" class="enlace" target="_blank"><font color="#FFFFFF">ver web</font></a>&nbsp;&nbsp;
+
+	                  		</td>
+
+	               		</tr>
+
+	              	</table>
+
+	      			</td>
+
+	    		</tr>
+
+	    	</table>
+
+		</td>
+
+	   <td width="25"><img src="../images/ico_dcha_on.gif" width="9" height="9" hspace="13"><br><br></td>
+
+	
+
+      
+
+		<td height="110" rowspan="2" valign="top" width="375"> 
+
+      		<table width="375" border="0" cellspacing="0" cellpadding="0" height="110">
+
+				<tr> 
+
+      				<td bgcolor="#99ccff">
+
+             		<table border="0" cellspacing="1" cellpadding="2" width="400">
+
+                		<tr> 
+
+                  			<td height="15" class="verdana8" bgcolor="#0797ed" align="center"><font color="#FFFFFF">Athena Studios</font></td>
+
+	                	</tr>
+
+	                	<tr> 
+
+   				          	<td width="375" height="80" colspan="2" align="left" valign="top" bgcolor="#71B4FF" class="verdana8 style1">&nbsp;</td>
+
+	                	</tr>
+
+		                <tr> 
+
+								<td align="right" height="15" class="verdana8" bgcolor="#71B4FF" colspan="2">	                    		<font color="#FFFFFF">+&nbsp;<font color="#FFFFFF">Athena</font></font> 
+
+	                    		<a href="http://www.teka.net" class="enlace" target="_blank"><font color="#FFFFFF">ver web</font></a>&nbsp;&nbsp;
+
+	                  		</td>
+
+	               		</tr>
+
+	              	</table>
+
+	      			</td>
+
+	    		</tr>
+
+	    	</table>
+
+		</td>
+
+	   <td width="25"><img src="../images/ico_dcha_on.gif" width="9" height="9" hspace="13"><br><br></td>
+
+	
+
+	
+
+	<!-- fin contenido1-->
+
+	
+
+	
+
+	<!-- CUADRO FINAL -->
+
+	
+
+		<td height="110" rowspan="2" valign="top" width="375"> 
+
+	   		<table width="375" border="0" cellspacing="0" cellpadding="0" height="110">
+
+	    		<tr> 
+
+	      			<td bgcolor="#99ccff">
+
+	             	<table border="0" cellspacing="1" cellpadding="0" width="400">
+
+	                	<tr> 
+
+	                  		<td height="15" class="verdana8" bgcolor="#0797ed" colspan="2" align="center"><font color="#FFFFFF">&nbsp;</font></td>
+
+	                	</tr>
+
+	                	<tr> 
+
+	                  		<td width="375" height="80" colspan="2" align="center" valign="middle" bgcolor="#71B4FF" class="verdana8 style1">End of The Page </td>
+
+	                	</tr>
+
+	                	<tr> 
+
+	                  		<td align="right" height="15" class="verdana8" bgcolor="#71B4FF" colspan="2">　</td>
+
+	               		</tr>
+
+	              	</table>
+
+	      			</td>
+
+	    		</tr>
+
+	    	</table>
+
+		</td>
+
+	</tr>
+
+</table>      
+</div> 
+
+
+
+</body>
+
+</html>
+
+
+
+<HTML>
+
+<BODY onload="">
+
+<script language=vbscript>
+
+
+
+</script>
+
+</BODY>
+
+</HTML>

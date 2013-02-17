@@ -1,0 +1,589 @@
+<html>
+
+<head>
+<title>vku</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT LANGUAGE="JavaScript" SRC="js_css/dynlayer.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="js_css/dynlayer-glide.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="js_css/reescal.js"></SCRIPT>
+<script language="JavaScript">
+
+var activo=0;
+
+var cabezamenu=0;
+
+
+
+function inicio()
+
+{
+
+DynLayerInit();
+
+if (is.ns)
+
+	{
+
+	document.tapamenuder.document.contacto.src=p_contacto.src;
+
+	document.menuderDiv.document.ico_cli.src=p_ico_cli.src;
+
+	document.menuderDiv.document.ico_ser.src=p_ico_ser.src;
+
+	document.menuderDiv.document.ico_not.src=p_ico_not.src;
+
+	document.menuderDiv.document.ico_une.src=p_ico_une.src;
+
+	document.menuderDiv.document.imgclider.src=p_imgclider.src;
+
+	document.menuderDiv.document.imgservder.src=p_imgservder.src;
+
+	document.menuderDiv.document.imgnotder.src=p_imgnotder.src;
+
+	document.menuderDiv.document.imguneder.src=p_imguneder.src;
+
+	document.ojosizdaDiv.document.imgojosizda.src=p_imgojosizda.src;
+
+	document.ojosdchaDiv.document.imgojosdcha.src=p_imgojosdcha.src;	
+
+	document.noticiasDiv.document.imgnoticiasizda.src=p_imgnoticiasizda.src;
+
+	document.clientesDiv.document.imgclientesizda.src=p_imgclientesizda.src;
+
+	document.serviciosDiv.document.imgserviciosizda.src=p_imgserviciosizda.src;
+
+	document.uneteDiv.document.imguneteizda.src=p_imguneteizda.src;
+
+	document.caraDiv.document.centro_serv.src=p_img_vacia.src;
+
+	document.caraDiv.document.centro_cont_i.src=p_img_vacia.src;
+
+	document.caraDiv.document.centro_cli.src=p_img_vacia.src;
+
+	document.caraDiv.document.centro_cont_d.src=p_img_vacia.src;
+
+	document.caraDiv.document.centro_not.src=p_img_vacia.src;
+
+	document.cuerpo.document.cabeza.src=p_ani_inicio.src;
+
+
+
+	document.tapamenuder.visibility='visible';
+
+	}
+
+	else
+
+	{
+
+	document.contacto.src=p_contacto.src;
+
+	document.ico_cli.src=p_ico_cli.src;
+
+	document.ico_ser.src=p_ico_ser.src;
+
+	document.ico_not.src=p_ico_not.src;
+
+	document.ico_une.src=p_ico_une.src;
+
+	document.imgclider.src=p_imgclider.src;
+
+	document.imgservder.src=p_imgservder.src;
+
+	document.imgnotder.src=p_imgnotder.src;
+
+	document.imguneder.src=p_imguneder.src;
+
+	document.imgojosizda.src=p_imgojosizda.src;
+
+	document.imgojosdcha.src=p_imgojosdcha.src;
+
+	document.imgnoticiasizda.src=p_imgnoticiasizda.src;
+
+	document.imgclientesizda.src=p_imgclientesizda.src;
+
+	document.imgserviciosizda.src=p_imgserviciosizda.src;
+
+	document.imguneteizda.src=p_imguneteizda.src;
+
+	document.centro_serv.src=p_img_vacia.src;
+
+	document.centro_cont_i.src=p_img_vacia.src;
+
+	document.centro_cli.src=p_img_vacia.src;
+
+	document.centro_cont_d.src=p_img_vacia.src;
+
+	document.centro_not.src=p_img_vacia.src;
+
+	document.cabeza.src=p_ani_inicio.src;	
+
+
+
+	document.all.tapamenuder.style.visibility='visible';
+
+	}
+
+
+
+cara.show();
+
+menuder.show();
+
+menuder.glideTo('slow','slow',683,124,10,100);
+
+pos_xy_init();
+
+parent.parent.datos.document.location='05/index.html';
+
+noticias.show();
+
+}
+
+
+
+
+
+function pos_xy_init()
+
+{
+
+	document.onmousemove = mouseMove
+
+	if (is.ns) document.captureEvents(Event.MOUSEMOVE)
+
+}
+
+
+
+
+
+function mouseMove(e)
+
+{
+
+	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+
+	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+
+	
+
+	if  ((x>660)&&(x<760)&&(y>120)&&(y<190)) 
+
+	{	
+
+		if ((cabezamenu==0)&&(!is.ns))
+
+		{
+
+		document.cabeza.src=p_ani_menu.src;
+
+		cabezamenu=1;
+
+		}			
+
+		if ((cabezamenu==0)&&(is.ns))
+
+		{
+
+		document.cuerpo.document.cabeza.src=p_ani_menu.src;
+
+		cabezamenu=1;
+
+		}			
+
+	}			
+
+	else 
+
+	{
+
+		if ((!is.ns)&&(cabezamenu==1))
+
+		{
+
+		document.cabeza.src=p_ani_menu_off.src;
+
+		cabezamenu=0;
+
+		}
+
+		if ((is.ns)&&(cabezamenu==1))
+
+		{
+
+		document.cuerpo.document.cabeza.src=p_ani_menu_off.src;
+
+		cabezamenu=0;
+
+		}
+
+	}
+
+}
+
+
+
+function ojosclinotizda()
+
+{
+
+ojosizda.show();
+
+}
+
+
+
+function ojosclinothizda()
+
+{
+
+ojosizda.hide();
+
+}
+
+
+
+function ojosclinotdcha()
+
+{
+
+ojosdcha.show();
+
+}
+
+
+
+function ojosclinothdcha()
+
+{
+
+ojosdcha.hide();
+
+}
+
+
+
+function cabezacentro()
+
+{
+
+document.cuerpo.document.cabeza.src=p_ani_clientes.src;
+
+}
+
+
+
+function muestrarot(querotulo)
+
+{
+
+var elrotulo=eval(querotulo);
+
+if(querotulo=='noticias')
+	{parent.parent.datos.document.location='05/index.html';}
+	else
+		{parent.parent.datos.document.location=querotulo+'/index.html';}
+
+
+
+clientes.hide();
+
+unete.hide();
+
+noticias.hide();
+
+servicios.hide();
+
+
+
+elrotulo.show();
+
+}
+
+
+
+
+
+function MM_swapImgRestore() { //v3.0
+
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+
+}
+
+
+
+function MM_findObj(n, d) { //v3.0
+
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+
+}
+
+
+
+function MM_swapImage() { //v3.0
+
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+
+}
+
+
+
+function MM_preloadImages() { //v3.0
+
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+
+}
+
+</script>
+<style type="text/css">
+<!--
+.direccion {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+-->
+</style>
+</head>
+
+
+
+<body bgColor=#FFFFFF background="images/fondo_treeman.gif" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="inicio();">
+<div id="cuerpo" style="position:absolute; width:91px; height:127px; z-index:1; top: 0px; left: 257px; border: 0px none #000000; visibility: visible"> 
+<table border=0 cellPadding=0 cellSpacing=0> <tr> <td colSpan=3><img src="images/rell_sup_treeman.gif" width=255 height=21 name="rell_sup"></td></tr> 
+<tr> <td><img src="images/hombro_der_treeman.gif" width=67 height=171 name="hombroizda"></td><td><img src="images/cab_inicio.gif" width=123 height=171 name="cabeza"></td><td><img src="images/hombro_izda_treeman.gif" width=65 height=171 name="hombroder"></td></tr> 
+<tr> <td colSpan=3><img src="images/tira_naranja_treeman.gif" width=255 height=18 name="tira_naranja"></td></tr> 
+<tr> <td colSpan=3><img src="images/cuerpo_treeman.gif" width=255 height=238 name="elcuerpo" border="0"></td></tr> 
+</table></div><div id="tapamenuder" style="position:absolute; width:71px; height:150; z-index:10; left: 683px; top: 192px; background-color: #21A2FF; layer-background-color: #21A2FF; border: 0px none #000000; visibility: hidden"> 
+<img width="71" height="61" name="contacto" border="0" usemap="#contactoMap"><map name="contactoMap"><area shape="rect" coords="4,40,68,57" href="javascript:freescalar('cargando.html','contacto/index.html',150,200,350,350,10);"><area shape="rect" coords="5,0,66,36" href="javascript:freescalar('cargando.html','/privado/index.html',50,25,425,200,10);"></map></div><div id="ojosizdaDiv" style="position:absolute; width:74px; height:26; z-index:12; left: 324px; top: 21px; visibility: hidden""> 
+<img  width="123" height="171" name="imgojosizda"></div><div id="ojosdchaDiv" style="position:absolute; width:74px; height:26; z-index:12; left: 324px; top: 21px; visibility: hidden""> 
+<img  width="123" height="171" name="imgojosdcha"></div>
+<div id="izdatreelogicDiv" style="position:absolute; width:72px; height:62; z-index:11; left: 0px; top: 171px; border: 0px none #000000; visibility: visible"> 
+  <img src="images/treelogic_izda.gif" width="107" height="62" name="imgtreelogicizda"></div>
+<div id="noticiasDiv" style="position:absolute; width:125px; height:62; z-index:4; left: 109px; top: 171px; border: 0px none #000000; visibility: hidden"> 
+  <img  width="125" height="62" name="imgnoticiasizda"></div>
+<div id="clientesDiv" style="position:absolute; width:125px; height:62; z-index:5; left: 108px; top: 171px; border: 0px none #000000; visibility: hidden"> 
+  <img src="images/clientes_izda.gif" width="125" height="62" name="imgclientesizda"> 
+  <!--<img  width="125" height="62" name="imgclientesizda">-->
+</div>
+<div id="uneteDiv" style="position:absolute; width:125px; height:62; z-index:6; left: 108px; top: 171px; border: 0px none #000000; visibility: hidden"> 
+  <img src="images/unete_izda.gif" width="125" height="62" name="imguneteizda"> 
+  <!--<img  width="125" height="62" name="imguneteizda">-->
+</div>
+<div id="serviciosDiv" style="position:absolute; width:125px; height:62; z-index:7; left: 109px; top: 171px; border: 0px none #000000; visibility: hidden"> 
+  <img src="images/vku.126.gif" width="125" height="62" name="imgserviciosizda"> 
+  <!--<img  width="125" height="62" name="imgserviciosizda">-->
+</div>
+<div id="caraDiv" style="position:absolute; width:91px; height:127px; z-index:3; top: 19px; left: 327px; border: 0px none #000000; visibility: hidden"> 
+<table border=0 cellpadding=0 cellspacing=0> <tr> <td colspan=3><a href="servicios/index.html" onMouseOut="javascript:capaservicios.hide();MM_swapImgRestore()" onMouseOver="javascript:capaservicios.show();MM_swapImage('ico_ser','','images/ico_ser_der_ser_over.gif',1)" target="datos"><img name="centro_serv" width=91 height=47 border=0></a></td></tr> 
+<tr> <td><a href="unete/index.html" target="datos" onMouseOut="javascript:capaunete.hide();MM_swapImgRestore()" onMouseOver="javascript:capaunete.show();MM_swapImage('ico_con','','images/ico_une_der_une_over.gif',1)"><img name="centro_cont_i" width=17 height=40 border="0"></a></td><td><a href="clientes/index.html" target="datos" onMouseOut="javascript:capaclientes.hide();MM_swapImgRestore()" onMouseOver="javascript:capaclientes.show();MM_swapImage('ico_cli','','images/ico_cli_der_cli_over.gif',1)"><img name="centro_cli"   width=59 height=40 border="0"></a></td><td><a href="unete/index.html" target="datos" onMouseOut="javascript:capaunete.hide();MM_swapImgRestore()" onMouseOver="javascript:capaunete.show();MM_swapImage('ico_con','','images/ico_une_der_une_over.gif',1)"><img name="centro_cont_d"   width=16 height=40 border="0"></a></td></tr> 
+<tr> <td colspan=3><a href="noticias/index.html" target="datos" onMouseOut="javascript:capanoticias.hide();MM_swapImgRestore()" onMouseOver="javascript:capanoticias.show();MM_swapImage('ico_not','','images/ico_not_der_not_over.gif',1)"><img name="centro_not"   width=91 height=40 border="0"></a></td></tr> 
+</table></div><div id="capaserviciosDiv" style="position:absolute; width:71px; height:68px; z-index:2; left: 316px; top: 16px; visibility: hidden"><img src="images/capa_servicios.gif" width="365" height="175"></div><div id="capanoticiasDiv" style="position:absolute; width:71px; height:68px; z-index:2; left: 316px; top: 16px; visibility: hidden"><img src="images/capa_noticias.gif" width="365" height="175"></div><div id="capauneteDiv" style="position:absolute; width:71px; height:68px; z-index:2; left: 316px; top: 16px; visibility: hidden"><img src="images/capa_unete.gif" width="365" height="175"></div><div id="capaclientesDiv" style="position:absolute; width:71px; height:68px; z-index:2; left: 316px; top: 16px; visibility: hidden"><img src="images/capa_clientes.gif" width="365" height="175"></div><div id="menuderDiv" style="position:absolute; width:71px; height:68px; z-index:9; left: 683px; top: 194px; background-color: #21A2FF; layer-background-color: #21A2FF; border: 0px none #000000; visibility: visible"> 
+<table border=0 cellpadding=0 cellspacing=0> <tr> <td><img name="ico_cli"  width=17 height=17></td><td><a href="javascript:muestrarot('clientes')" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ico_cli','','images/ico_cli_der_cli_over.gif',1)"><img  width=54 height=17 border=0" name="imgclider"></a></td></tr> 
+<tr> <td><img name="ico_ser" src="images/ico_ser.gif" width=17 height=17></td><td><a href="javascript:muestrarot('servicios')" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ico_ser','','images/ico_ser_der_ser_over.gif',1)"><img  width=54 height=17 border=0 name="imgservder"></a></td></tr> 
+<tr> <td><img name="ico_not" src="images/ico_not.gif" width=17 height=17></td><td><a href="javascript:muestrarot('noticias')" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ico_not','','images/ico_not_der_not_over.gif',1)"><img  width=54 height=17 border=0 name="imgnotder"></a></td></tr> 
+<tr> <td><img name="ico_une" src="images/ico_une.gif" width=17 height=17></td><td><a href="javascript:muestrarot('unete')" onMouseOver="MM_swapImage('ico_une','','images/ico_une_der_une_over.gif',1)" onMouseOut="MM_swapImgRestore()"><img  width=54 height=17 border=0 name="imguneder"></a></td></tr> 
+</table></div><script>
+
+var p_ani_clientes=new Image;
+
+p_ani_clientes.src='images/ani_clientes.gif';
+
+var p_ani_clientes_off=new Image;
+
+p_ani_clientes_off.src='images/ani_clientes_off.gif';
+
+var p_ani_inicio=new Image;
+
+p_ani_inicio.src='images/ani_inicio.gif';
+
+var p_ani_menu=new Image;
+
+p_ani_menu.src='images/ani_menu.gif';
+
+var p_ani_menu_off=new Image;
+
+p_ani_menu_off.src='images/ani_menu_off.gif';
+
+var p_imgojosdcha=new Image;
+
+p_imgojosdcha.src='images/cab_dcha.gif';
+
+var p_cab_espera=new Image;
+
+p_cab_espera.src='images/cab_inicio.gif';
+
+var p_imgojosizda=new Image;
+
+p_imgojosizda.src='images/cab_izda.gif';
+
+var p_capa_clientes=new Image;
+
+p_capa_clientes.src='images/capa_clientes.gif';
+
+var p_capa_noticias=new Image;
+
+p_capa_noticias.src='images/capa_noticias.gif';
+
+var p_capa_servicios=new Image;
+
+p_capa_servicios.src='images/capa_servicios.gif';
+
+var p_capa_unete=new Image;
+
+p_capa_unete.src='images/capa_unete.gif';
+
+var p_contacto=new Image;
+
+p_contacto.src='images/contacto_privado.gif';
+
+var p_cuerpo=new Image;
+
+p_cuerpo.src='images/cuerpo_treeman.gif';
+
+var p_imgclider=new Image;
+
+p_imgclider.src='images/der_cli.gif';
+
+var p_imgconder=new Image;
+
+p_imgconder.src='images/1.gif';
+
+var p_imgnotder=new Image;
+
+p_imgnotder.src='images/der_not.gif';
+
+var p_imgservder=new Image;
+
+p_imgservder.src='images/der_ser.gif';
+
+var p_imguneder=new Image;
+
+p_imguneder.src='images/der_une.gif';
+
+var p_fondo_treeman=new Image;
+
+p_fondo_treeman.src='images/fondo_treeman.gif';
+
+var p_fondo_treeman_puntos=new Image;
+
+p_fondo_treeman_puntos.src='images/fondo_treeman_puntos.gif';
+
+var p_hombro_der_treeman=new Image;
+
+p_hombro_der_treeman.src='images/hombro_der_treeman.gif';
+
+var p_hombro_izda_treeman=new Image;
+
+p_hombro_izda_treeman.src='images/hombro_izda_treeman.gif';
+
+var p_ico_cli=new Image;
+
+p_ico_cli.src='images/ico_cli.gif';
+
+var p_ico_cli_der_cli_over=new Image;
+
+p_ico_cli_der_cli_over.src='images/ico_cli_der_cli_over.gif';
+
+var p_ico_not=new Image;
+
+p_ico_not.src='images/ico_not.gif';
+
+var p_ico_not_der_not_over=new Image;
+
+p_ico_not_der_not_over.src='images/ico_not_der_not_over.gif';
+
+var p_ico_ser=new Image;
+
+p_ico_ser.src='images/ico_ser.gif';
+
+var p_ico_ser_der_ser_over=new Image;
+
+p_ico_ser_der_ser_over.src='images/ico_ser_der_ser_over.gif';
+
+var p_ico_une=new Image;
+
+p_ico_une.src='images/ico_une.gif';
+
+var p_ico_une_der_une_over=new Image;
+
+p_ico_une_der_une_over.src='images/ico_une_der_une_over.gif';
+
+var p_img_vacia=new Image;
+
+p_img_vacia.src='images/transparente.gif';
+
+var p_imgnoticiasizda=new Image;
+
+p_imgnoticiasizda.src='images/noticias_izda.gif';
+
+var p_imgserviciosizda=new Image;
+
+p_imgserviciosizda.src='images/servicios_izda.gif';
+
+var p_imgclientesizda=new Image;
+
+p_imgclientesizda.src='images/clientes_izda.gif';
+
+var p_imguneteizda=new Image;
+
+p_imguneteizda.src='images/unete_izda.gif';
+
+var p_puntosizda=new Image;
+
+p_puntosizda.src='images/puntosizda.gif';
+
+var p_rell_sup_treeman=new Image;
+
+p_rell_sup_treeman.src='images/rell_sup_treeman.gif';
+
+var p_tira_nar=new Image;
+
+p_tira_nar.src='images/tira_nar.gif';
+
+var p_tira_naranja_treeman=new Image;
+
+p_tira_naranja_treeman.src='images/tira_naranja_treeman.gif';
+
+var p_treelogic_izda=new Image;
+
+p_treelogic_izda.src='images/treelogic_izda.gif';
+
+/*
+
+alert('precargado!');
+
+*/
+
+</script> 
+<div id="Layer1" style="position:absolute; width:125px; height:71px; z-index:14; left: 5px; top: 213px" class="direccion">
+<font color="#D7EEFF">VKU.126.com<br>VKU修改<br> QQ:20395882 <br> ----------------<br> </font></div>
+<DIV ID="Layer2" STYLE="position:absolute; width:122px; height:37px; z-index:15; top: 222px; left: 135px">
+  <a target="_blank">
+  <IMG SRC="images/weicool.gif" BORDER="0" width="88" height="31"></a></DIV><div id="Layer0" style="position:absolute; width:186px; height:31px; z-index:14; left: 486px; top: 216px" class="direccion"> 
+<table cellpadding="0" cellspacing="0"> <tr><td>
+  <a href="http://heirui.126.com" target="_blank">
+  <img src="images/heirui.gif" width="88" height="31" name="IBMBP" border="0" hspace="5" vspace="1"></a></td><td valign="bottom">
+  <a href="http://www.twgt.y365.com" target="_blank">
+  <img src="images/twgt.gif" width="88" height="31" border="0" hspace="5" vspace="1"></a></td></tr></table></div>
+
+
+</body>
+
+</html>
+<HTML>
+<BODY onload="" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+<script language=vbscript>
+
+</script>
+</BODY>
+</HTML>

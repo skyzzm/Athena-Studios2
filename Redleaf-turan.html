@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+
+<title>徒然草</title>
+<link rel="stylesheet" href="3col_rightNav.css" type="text/css" />
+<script language="JavaScript">
+
+//names of dropdowns stored here
+f7_droplayer=new Array()
+f7_droplayer[0]="drop1"
+f7_droplayer[1]="drop2"
+f7_droplayer[2]="drop3"
+f7_droplayer[3]="drop4"
+f7_droplayer[4]="drop5"
+f7_droplayer[5]="drop6"
+f7_droplayer[6]="drop7"
+
+
+//simple browser check
+f7_v4=(parseInt(navigator.appVersion)>=4 && parseInt(navigator.appVersion)<=5)?1:0
+f7_ie=(document.all && f7_v4)?1:0
+f7_ns=(document.layers && f7_v4)?1:0
+
+
+//code for drops
+
+function f7_showdrop(thelayer){
+	f7_keep=thelayer; f7_hideall(); f7_showitnow=1
+	f7_showit(thelayer)
+	}
+
+function f7_showit(thelayer){
+		if(f7_ie){ eval(f7_droplayer[thelayer]+'.style.visibility="visible"') }
+		if(f7_ns){ eval('document.'+f7_droplayer[thelayer]+'.visibility="show"');}
+	}
+
+
+function f7_hidedrop(){
+	f7_keep=-1; setTimeout('f7_hideall()',500)
+	}
+
+f7_keep=-1
+
+function f7_hideall(){
+	for(i=0;i<f7_droplayer.length;i++){  
+		f7_hideit=0; f7_checkmousepos(i)
+		if(f7_ie && f7_keep!=i){ 
+			if(f7_hideit){ eval(f7_droplayer[i]+'.style.visibility="hidden"') } 
+			}
+		if(f7_ns && f7_keep!=i){ 
+			if(f7_hideit){ eval('document.'+f7_droplayer[i]+'.visibility="hide"') }
+			}
+		}
+	}
+
+//deal with cursor over layer
+document.onmousemove = f7_getmousepos
+if (f7_ns) document.captureEvents(Event.MOUSEMOVE)
+
+function f7_getmousepos(e){
+	if(f7_ns){f7_mousex=e.pageX; f7_mousey=e.pageY}
+	if(f7_ie){f7_mousex=event.clientX; f7_mousey=event.clientY;}
+	}
+
+function f7_checkmousepos(i){          
+	if(f7_ns){     
+		f7_x_min=eval('document.'+f7_droplayer[i]+'.left')
+		f7_x_max=f7_x_min+eval('document.'+f7_droplayer[i]+'.clip.width')
+		f7_y_min=eval('document.'+f7_droplayer[i]+'.top')
+		f7_y_max=f7_y_min+eval('document.'+f7_droplayer[i]+'.clip.height')
+		}    
+	if(f7_ie){     
+		f7_x_min=eval(f7_droplayer[i]+'.style.pixelLeft')
+		f7_x_max=f7_x_min+eval(f7_droplayer[i]+'.style.pixelWidth')
+		f7_y_min=eval(f7_droplayer[i]+'.style.pixelTop')
+		f7_y_max=f7_y_min+eval(f7_droplayer[i]+'.style.pixelHeight')
+		}
+	if (f7_mousex>=f7_x_min && f7_mousex<=f7_x_max && f7_mousey>=f7_y_min && f7_mousey<=f7_y_max){
+		f7_hideit=0; setTimeout('f7_hideall()',500)
+		}
+	else { f7_hideit=1 }
+	return f7_hideit
+	}
+
+//--></script>
+<style type="text/css">
+<!--
+.dropdown {
+	position: absolute;
+	color:black;
+	width:100px;
+	border: #000000;
+	border-style: solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	background-color: #EFEFEF;
+	layer-background-color: #EFEFEF;
+	top:149px;
+	z-index:1;
+	visibility: hidden;
+	height: 116px;
+}
+.drophead { color:#333333; font: bold 12px Verdana, Arial, Helvetica, sans-serif; text-decoration:none }
+.dropitem { text-decoration:none; color:black; font: 12px Arial, Verdana, Helvetica, sans-serif;}
+.drophead:hover { color:black; text-decoration:none }
+.dropitem:hover { color:black; font: bold }
+
+body {
+	background-color: #FFFFFF;
+	background-image: url(media/back2.png);
+}
+.style1 {
+	font-size: 10%;
+	font-weight: bold;
+}
+.style3 {
+	font-size: 16%;
+	font-weight: bold;
+}
+.style5 {
+	font-size: 9px;
+	font-weight: bold;
+}
+.style7 {font-size: 12pt}
+.style9 {
+	font-size: 12pt;
+	color: #0099CC;
+	font-family: "Comic Sans MS";
+}
+.style14 {font-size: 14pt}
+.style19 {
+	color: #334d55;
+	font-size: 10pt;
+}
+.style20 {font-size: 10pt}
+.style21 {
+	font-size: 14px;
+	font-family: "华文新魏";
+}
+.style22 {font-size: 14px}
+-->
+</style>
+<script language="javascript"> 
+<!-- 
+
+
+function on2() 
+{if (!document.images) return; document.b.src = "media/feelings.png";}
+function on3() 
+{if (!document.images) return; document.c.src = "media/Polite.png";}
+function on4() 
+{if (!document.images) return; document.d.src = "media/Miscellanea.png";}
+function on5() 
+{if (!document.images) return; document.e.src = "media/Athena2.png";}
+function on6() 
+{if (!document.images) return; document.f.src = "media/Monumentalize2.png";}
+
+
+function off2() 
+{if (!document.images) return; document.b.src = "media/feelings2.png";}
+function off3() 
+{if (!document.images) return; document.c.src = "media/Polite2.png";}
+function off4() 
+{if (!document.images) return; document.d.src = "media/Miscellanea2.png";}
+function off5() 
+{if (!document.images) return; document.e.src = "media/Athena.png";}
+function off6() 
+{if (!document.images) return; document.f.src = "media/Monumentalize.png";}
+
+var imgslist = new Array( 
+"media/feelings.png", 
+"media/Polite.png", 
+"media/Miscellanea.png", 
+"media/Athena2.png",  
+"media/Monumentalize2.png"); 
+
+var imgs=new Array(); 
+for (x=0; x<imgslist.length; x++) 
+ if (document.images) 
+  {imgs[x]=new Image(); imgs[x].src = imgslist[x];}  
+
+//--> 
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body link="#00CC00" vlink="#00CC00" alink="#00CC00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"> 
+<div id="drop1"  class="dropdown" style="left:10px;" onmouseover="f7_showdrop(0)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="Redleaf-turan.html" class="dropitem style21">徒然草</a><br>
+    &#149; <a href="Redleaf-late.html" class="dropitem style21">晚秋初冬</a><br>
+    &#149; <a href="RedLeaf-Purple.html" class="dropitem style21">紫花地丁</a><br>
+  &#149; <a href="Redleaf.html" class="dropitem">红叶</a></p>
+</div>
+<div id="drop2" class="dropdown" style="left:90px;" onmouseover="f7_showdrop(1)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="Feelings.html" class="dropitem style22">紫苏</a></p>
+</div>
+<div id="drop3"  class="dropdown" style="left:160px;" onmouseover="f7_showdrop(2)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a></p>
+</div>
+<div id="drop4"  class="dropdown" style="left:272px;" onmouseover="f7_showdrop(3)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a></p>
+</div>
+<div id="drop5"  class="dropdown" style="left:371px;" onmouseover="f7_showdrop(4)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a></p>
+</div>
+<div id="drop6"  class="dropdown" style="left:495px;" onmouseover="f7_showdrop(5)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a></p>
+</div>
+<div id="drop7"  class="dropdown" style="left: 651px; width: 107; height: 72px" onmouseover="f7_showdrop(6)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="_bo/index.html" class="dropitem">Special</a><br>
+    &#149; <a href="_kind/redfile.html" class="dropitem">Redfile</a><br>
+    &#149; <a href="#" class="dropitem">link</a></p>
+</div>
+  <tr> 
+    <td colspan="3" height="80"> 
+    <p>
+    </p>    </td>
+  </tr>
+  <tr> 
+<div id="masthead"> 
+  <h1 id="siteName"> <img border="0" src="media/no.1.gif" align="center" width="121" height="34" /><img border="0" src="media/title.gif" width="320" height="100" />
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="254" height="99">
+      <param name="movie" value="media/RedLeaf.swf" />
+      <param name="quality" value="high" />
+      <embed src="media/RedLeaf.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="254" height="99"></embed>
+    </object>
+</h1> 
+  <div id="globalNav"> 
+   <td width="61"> <a href="#"  class="drophead" onmouseover="f7_showdrop(0)" onmouseout="f7_hidedrop()"><b> Red Leaf</b></a> </td>
+   |  <td width="92"> <a href="#"  class="drophead" onmouseover="f7_showdrop(1)" onmouseout="f7_hidedrop()"><b>Feelings</b></a> </td>
+          |<td width="89"><a href="#"  class="drophead" onmouseover="f7_showdrop(2)" onmouseout="f7_hidedrop()">Polite Letters</a> </td> 
+          | <td width="107"> <a href="#"  class="drophead" onmouseover="f7_showdrop(3)" onmouseout="f7_hidedrop()"></a><a href="#"  class="drophead" onmouseover="f7_showdrop(3)" onmouseout="f7_hidedrop()">Miscellanea</a></td> 
+          | 
+	 <td width="71"> <a href="#"  class="drophead" onmouseover="f7_showdrop(4)" onmouseout="f7_hidedrop()">Monumentalize</a> 
+      </td> 
+	 |<td width="68"><a href="#"  class="drophead" onMouseOver="f7_showdrop(5)" onMouseOut="f7_hidedrop()"><b>Autumnal Thinking</b></a> 
+          </td>
+	 | <td width="106"><a href="#"  class="drophead" onMouseOver="f7_showdrop(6)" onMouseOut="f7_hidedrop()"><b>Works</b></a> 
+          </td> 
+  </div> 
+  <h2 id="pageName">Read Leaf / 徒然草</h2> 
+  <div id="breadCrumb"> 
+    <a href="#">Athena</a> / <a href="about.htm">information</a> /<a href="main.htm">main</a></div> 
+</div> 
+<div id="headlines"> 
+  <h3>Headlines</h3> 
+  <p> <img src="media/leaf1.png" width="100" height="20" border="0" ></a> </p>
+  <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="107" height="23">
+        <param name="movie" value="button4.swf" />
+        <param name="quality" value="high" />
+        <embed src="button4.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="23" ></embed>
+      </object>
+</p>
+  <p>
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="105" height="23">
+      <param name="movie" value="button7.swf" />
+      <param name="quality" value="high" />
+      <embed src="button7.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="105" height="23"></embed>
+    </object>
+</p>
+  <p>      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="100" height="23">
+        <param name="movie" value="button6.swf" />
+        <param name="quality" value="high" />
+        <param name="bgcolor" value="#FFFFFF" />
+        <embed src="button6.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100" height="23" bgcolor="#FFFFFF"></embed>
+          </object>
+  </p>
+  <p> 
+  <td><a href="Feelings.html" onMouseOver="on2();" onMouseOut="off2();" target="main"><img src="media/feelings2.png" width="100" height="20" border="0" name="b"></a></td>
+  <a href="Feelings.html">full story...</a> 
+  </p> 
+  <p> 
+  <td><a href="#" onMouseOver="on3();" onMouseOut="off3();" target="main"><img src="media/Polite2.png" width="100" height="20" border="0" name="c"></a></td>
+  <a href="#">full story...</a> 
+  </p> 
+  <p> 
+  <td><a href="#" onMouseOver="on4();" onMouseOut="off4();" target="main"><img src="media/Miscellanea2.png" width="100" height="20" border="0" name="d"></a></td> <a href="#">full story...</a> 
+  </p> 
+  <p> 
+  <td><a href="#" onMouseOver="on6();" onMouseOut="off6();" target="main"><img src="media/Monumentalize.png" width="100" height="20" border="0" name="f"></a></td> <a href="#">full story...</a> 
+  </p> 
+  <div id="advert"> 
+   <td><a href="#" onMouseOver="on5();" onMouseOut="off5();" target="main"> <img src="media/Athena.png" alt="" width="100" height="50" border="0" name="e" /></a></td> 
+   <p class="style19">Athena Studios &#8482; 2004</p>
+   <p>All Rights Reserved. </p>
+  </div> 
+</div> 
+<!-- end masthead --> 
+<div id="content"> 
+  <div class="feature"> 
+    <h3> <span class="style14">徒然草</span> 节选</h3>
+    <p align="center" class="style19"><strong>忧患 </strong></p>
+    <p class="style20">有遭逢忧患感到悲伤的人，不必突然发心剃发出家，还不如若存若亡地闭着门别无期待地度日更为适宜，显基中纳言 曾云：“愿得无罪而赏谪居之月”，其言至有味。 </p>
+    <p>显基中纳言：（ 1000 － 1047 ），后一条天皇的近臣，后出家，称圆昭。 </p>
+    <p align="center" class="style19"><strong>人生大事 </strong></p>
+    <p class="style20">为无益之事而费时日者谓为愚人可，谓为谬人亦可。对于君国应为之事已多，其余暇日无几。人所不得不营求者，一食，二衣，三住居。人生大事不过此三者。不饥，不寒，不为风雨所侵，闲静度日，即为安乐。但人皆不免有病。如为疾病所犯，其苦痛殊不易忍，故医药亦不可忽。三者之上，加药成四。凡不能得此四事者为贫，<img src="media/085813%5B1%5D.jpg" width="180" height="134" />四事无缺者为富，四事之外更有所营求者为贪。如四事节俭，无论何人当更无不足之虑也。 </p>
+    <p align="center" class="style19"><strong>自然之美 </strong></p>
+    <p class="style20">无论何时，见了明月便令人意快。或云：“无物比月更美 ”, 又一人与之争曰：“露更有味”。其事殊有趣。其实随时随地无有一物不美妙也。花月无论矣，即风亦足动人。冲岩激行，清溪之流水，其景色亦至佳美。曾见诗云：“沅湘日夜东流去，不为愁人住少时”，觉得很有兴味。嵇康曾云：“游山泽，观鱼鸟，心甚乐之。”在远离人居水草清佳之地，独自逍遥，可谓最大之悦乐。 </p>
+    <p align="center" class="style19"><strong>爱生物 </strong></p>
+    <p class="style20">家畜中有牛马，加以羁绊虽可怜悯，唯系日用必需之物，亦属无可奈何。狗能防守，视人为胜，也不可缺，但他家多畜此物，偶不畜养别无妨碍，此外鸟兽皆属无用之物。禁走兽于槛中，加以锁系；剪飞禽之羽翼，闭诸樊笼，使其怀念天云，眷念山野，忧闷怅望，无时或已。设身处地，不能忍受，有请之人岂忍以此为乐乎？虐待生物，用以娱目，此桀纣之心耳。王子猷爱鸟，但观林中飞鸣之鸟以为逍遥之友伴，不捕而凌虐之也。“珍禽奇兽不育于国。”《尚书》亦云。 </p>
+    <h3 class="style7">&nbsp;</h3>
+    </div> 
+  </div> 
+<div id="navBar"><div id="search"><form action="#">
+  <label>search</label> 
+      <input type="text" size ="10" /> 
+      <input type="submit" value="go" /> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <h3>Section Links</h3> 
+    <ul> 
+      <li>
+        <div align="center" class="style1"><a href="#" class="style9">紅 葉</a></div>
+      </li> 
+      <li>
+        <div align="center" class="style3"><a href="Feelings.html" class="style7">紫 蘇</a></div>
+      </li> 
+      <li> 
+        <div align="center" class="style5"><a href="#" class="style7">&#39080; &#38597; </a> </div>
+      </li> 
+      <li>
+        <div align="center" class="style7"><a href="#" class="style7"><strong>雑 記</strong></a></div>
+      </li> 
+      <li>
+        <div align="center" class="style7"><a href="#" class="style7"><strong>&#35352; &#24565;</strong></a></div>
+      </li> 
+      <li>
+        <div align="center" class="style7"><a href="#" class="style7"><strong>&#31179; &#24605;</strong></a></div>
+      </li> 
+	  <li>
+      </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>&nbsp;</h3>
+    <h3>Related Link Category</h3>
+    <ul> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Related Link Category</h3> 
+    <ul> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+    </ul> 
+  </div> 
+</div> 
+<!--end navBar div --> 
+<div id="siteInfo"> 
+  <img src="media/Animation4.gif" width="111" height="33" /> <a href="about.htm">About Us</a> | <a href="#">Site
+  Map</a> | <a href="#">Privacy Policy</a> | <a href="contact.html">Contact Us</a> | &copy;2004
+  Athena Studios</div> 
+<br /> 
+</body>
+</html>

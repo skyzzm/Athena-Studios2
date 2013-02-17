@@ -1,0 +1,149 @@
+<HTML>
+<HEAD>
+<TITLE>Site map</TITLE>
+<SCRIPT language=JavaScript type=text/JavaScript>
+//下拉菜单相关代码
+ var h;
+ var w;
+ var l;
+ var t;
+ var topMar = 1;
+ var leftMar = -2;
+ var space = 1;
+ var isvisible;
+ var MENU_SHADOW_COLOR='#999999';//定义下拉菜单阴影色
+ var global = window.document
+ global.fo_currentMenu = null
+ global.fo_shadows = new Array
+
+function HideMenu() 
+{
+ var mX;
+ var mY;
+ var vDiv;
+ var mDiv;
+	if (isvisible == true)
+{
+		vDiv = document.all("menuDiv");
+		mX = window.event.clientX + document.body.scrollLeft;
+		mY = window.event.clientY + document.body.scrollTop;
+		if ((mX < parseInt(vDiv.style.left)) || (mX > parseInt(vDiv.style.left)+vDiv.offsetWidth) || (mY < parseInt(vDiv.style.top)-h) || (mY > parseInt(vDiv.style.top)+vDiv.offsetHeight)){
+			vDiv.style.visibility = "hidden";
+			isvisible = false;
+		}
+}
+}
+
+function ShowMenu(vMnuCode,tWidth) {
+	vSrc = window.event.srcElement;
+	vMnuCode = "<table id='submenu' cellspacing=1 cellpadding=3 style='width:"+tWidth+"' class=menu onmouseout='HideMenu()'><tr height=23><td nowrap align=left class=MenuBody>" + vMnuCode + "</td></tr></table>";
+
+	h = vSrc.offsetHeight;
+	w = vSrc.offsetWidth;
+	l = vSrc.offsetLeft + leftMar+4;
+	t = vSrc.offsetTop + topMar + h + space-2;
+	vParent = vSrc.offsetParent;
+	while (vParent.tagName.toUpperCase() != "BODY")
+	{
+		l += vParent.offsetLeft;
+		t += vParent.offsetTop;
+		vParent = vParent.offsetParent;
+	}
+
+	menuDiv.innerHTML = vMnuCode;
+	menuDiv.style.top = t;
+	menuDiv.style.left = l;
+	menuDiv.style.visibility = "visible";
+	isvisible = true;
+    makeRectangularDropShadow(submenu, MENU_SHADOW_COLOR, 4)
+}
+
+function makeRectangularDropShadow(el, color, size)
+{
+	var i;
+	for (i=size; i>0; i--)
+	{
+		var rect = document.createElement('div');
+		var rs = rect.style
+		rs.position = 'absolute';
+		rs.left = (el.style.posLeft + i) + 'px';
+		rs.top = (el.style.posTop + i) + 'px';
+		rs.width = el.offsetWidth + 'px';
+		rs.height = el.offsetHeight + 'px';
+		rs.zIndex = el.style.zIndex - i;
+		rs.backgroundColor = color;
+		var opacity = 1 - i / (i + 1);
+		rs.filter = 'alpha(opacity=' + (100 * opacity) + ')';
+		el.insertAdjacentElement('afterEnd', rect);
+		global.fo_shadows[global.fo_shadows.length] = rect;
+	}
+}
+</SCRIPT>
+
+
+
+
+
+<SCRIPT language=JavaScript type=text/JavaScript>
+//菜单列表
+document.write("<style type=text/css>#master {LEFT: -200px; POSITION: absolute; TOP: 25px; VISIBILITY: visible; Z-INDEX: 999}</style>")
+document.write("<table id=master width='218' border='0' cellspacing='0' cellpadding='0'><tr><td><img border=0 height=6 src=image/menutop.gif  width=200></td><td rowspan='2' valign='top'><img id=menu onMouseOver=javascript:expand() border=0 height=70 name=menutop src=image/menuo.gif width=18></td></tr>");
+document.write("<tr><td valign='top'><table width='100%' border='0' cellspacing='5' cellpadding='0'><tr><td height='400' valign='top'><table width=100% height='100%' border=1 cellpadding=0 cellspacing=5 bordercolor='#666666' bgcolor=#ecf6f5 style=FILTER: alpha(opacity=90)><tr>");
+document.write("<td height='10' align='center' bordercolor='#ecf6f5'><font color=999900><strong>栏 目 树 形 导 航</strong></font></td></tr><tr><td valign='top' bordercolor='#ecf6f5'>");
+document.write("<iframe width=100% height=100% src='tree.htm' frameborder=0></iframe></td></tr></table></td></tr></table></td></tr></table>");
+
+var ie = document.all ? 1 : 0
+var ns = document.layers ? 1 : 0
+var master = new Object("element")
+master.curLeft = -200;	master.curTop = 10;
+master.gapLeft = 0;		master.gapTop = 0;
+master.timer = null;
+
+if(ie){var sidemenu = document.all.master;}
+if(ns){var sidemenu = document.master;}
+setInterval("FixY()",100);
+
+function moveAlong(layerName, paceLeft, paceTop, fromLeft, fromTop){
+	clearTimeout(eval(layerName).timer)
+	if(eval(layerName).curLeft != fromLeft){
+		if((Math.max(eval(layerName).curLeft, fromLeft) - Math.min(eval(layerName).curLeft, fromLeft)) < paceLeft){eval(layerName).curLeft = fromLeft}
+		else if(eval(layerName).curLeft < fromLeft){eval(layerName).curLeft = eval(layerName).curLeft + paceLeft}
+			else if(eval(layerName).curLeft > fromLeft){eval(layerName).curLeft = eval(layerName).curLeft - paceLeft}
+		if(ie){document.all[layerName].style.left = eval(layerName).curLeft}
+		if(ns){document[layerName].left = eval(layerName).curLeft}
+	}
+	if(eval(layerName).curTop != fromTop){
+   if((Math.max(eval(layerName).curTop, fromTop) - Math.min(eval(layerName).curTop, fromTop)) < paceTop){eval(layerName).curTop = fromTop}
+		else if(eval(layerName).curTop < fromTop){eval(layerName).curTop = eval(layerName).curTop + paceTop}
+			else if(eval(layerName).curTop > fromTop){eval(layerName).curTop = eval(layerName).curTop - paceTop}
+		if(ie){document.all[layerName].style.top = eval(layerName).curTop}
+		if(ns){document[layerName].top = eval(layerName).curTop}
+	}
+	eval(layerName).timer=setTimeout('moveAlong("'+layerName+'",'+paceLeft+','+paceTop+','+fromLeft+','+fromTop+')',30)
+}
+
+function setPace(layerName, fromLeft, fromTop, motionSpeed){
+	eval(layerName).gapLeft = (Math.max(eval(layerName).curLeft, fromLeft) - Math.min(eval(layerName).curLeft, fromLeft))/motionSpeed
+	eval(layerName).gapTop = (Math.max(eval(layerName).curTop, fromTop) - Math.min(eval(layerName).curTop, fromTop))/motionSpeed
+	moveAlong(layerName, eval(layerName).gapLeft, eval(layerName).gapTop, fromLeft, fromTop)
+}
+
+var expandState = 0
+
+function expand(){
+	if(expandState == 0){setPace("master", 0, 10, 10); if(ie){document.menutop.src = "image/menui.gif"}; expandState = 1;}
+	else{setPace("master", -200, 10, 10); if(ie){document.menutop.src = "image/menuo.gif"}; expandState = 0;}
+}
+
+function FixY(){
+	if(ie){sidemenu.style.top = document.body.scrollTop+10}
+	if(ns){sidemenu.top = window.pageYOffset+10}
+}
+</SCRIPT>
+</HEAD>
+<BODY leftmargin=0 topmargin=0 onmousemove='HideMenu()'>
+<div id=menuDiv style='Z-INDEX: 1000; VISIBILITY: hidden; WIDTH: 1px; POSITION: absolute; HEIGHT: 1px; BACKGROUND-COLOR: #9cc5f8'></div>
+
+
+</BODY>
+</HTML>

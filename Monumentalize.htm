@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>monumentalize</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<SCRIPT language=JavaScript src="images3/navcond.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>
+
+
+var myNavBar1 = new NavBar(0);
+var dhtmlMenu;
+
+
+dhtmlMenu = new NavBarMenu(100, 0);
+dhtmlMenu.addItem(new NavBarMenuItem("Home", "Athena Studio.htm"));
+myNavBar1.addMenu(dhtmlMenu);
+
+dhtmlMenu = new NavBarMenu(100, 120);
+dhtmlMenu.addItem(new NavBarMenuItem("Keep", "")); 
+dhtmlMenu.addItem(new NavBarMenuItem("Red Leaf", "Redleaf.html"));
+dhtmlMenu.addItem(new NavBarMenuItem("Feelings", "Feelings.html"));
+dhtmlMenu.addItem(new NavBarMenuItem("Polite Letters", "Polite.html"));
+dhtmlMenu.addItem(new NavBarMenuItem("Miscellanea", "Miscellanea.html"));
+dhtmlMenu.addItem(new NavBarMenuItem("Autumnal Thinking", "Autumn.html"));
+myNavBar1.addMenu(dhtmlMenu);
+
+dhtmlMenu = new NavBarMenu(110, 120);
+dhtmlMenu.addItem(new NavBarMenuItem("Services", ""));
+dhtmlMenu.addItem(new NavBarMenuItem("Special", "_bo/index.html"));
+dhtmlMenu.addItem(new NavBarMenuItem("redfile", "_kind/redfile.html"));
+dhtmlMenu.addItem(new NavBarMenuItem("For you", "gd/Sp for you.htm"));
+myNavBar1.addMenu(dhtmlMenu);
+
+dhtmlMenu = new NavBarMenu(100, 150);
+dhtmlMenu.addItem(new NavBarMenuItem("Contact Us", ""));
+dhtmlMenu.addItem(new NavBarMenuItem("contact", "contact.html"));
+dhtmlMenu.addItem(new NavBarMenuItem("about us", "about.htm"));
+dhtmlMenu.addItem(new NavBarMenuItem("Billing", "_kind/html/profile.html"));
+dhtmlMenu.addItem(new NavBarMenuItem("Service", "mailto:Yuukiri@126.com"));
+myNavBar1.addMenu(dhtmlMenu);
+
+dhtmlMenu = new NavBarMenu(120, 150);
+dhtmlMenu.addItem(new NavBarMenuItem("Reserve", ""));
+dhtmlMenu.addItem(new NavBarMenuItem("Athena Player", "media/Athena.exe"));
+dhtmlMenu.addItem(new NavBarMenuItem("Music", "Music.htm"));
+dhtmlMenu.addItem(new NavBarMenuItem("Looks Great", "main.html"));
+myNavBar1.addMenu(dhtmlMenu);
+
+//set menu colors
+myNavBar1.setColors("#000000", "#000000", "#ffffff", "#ffffff", "#000000", "#000000", "#999966", "#ffffff", "#000000")
+
+//uncomment below line to center the menu (valid values are "left", "center", and "right"
+//myNavBar1.setAlign("center")
+
+var fullWidth;
+
+function init() {
+
+  // Get width of window, need to account for scrollbar width in Netscape.
+
+  fullWidth = getWindowWidth() 
+    - (isMinNS4 && getWindowHeight() < getPageHeight() ? 16 : 0);
+
+  myNavBar1.resize(fullWidth);
+  myNavBar1.create();
+  myNavBar1.setzIndex(2);
+}
+</SCRIPT>
+
+<META content="MSHTML 5.00.3502.5390" name=GENERATOR>
+<style type="text/css">
+<!--
+.style5 {font-family: Arial, Helvetica, sans-serif}
+.style8 {font-family: Arial, Helvetica, sans-serif; color: #999966; }
+.style9 {color: #D4D0C8}
+-->
+</style>
+</HEAD>
+<BODY background=images3/back2.gif leftMargin=0 onload=init() 
+topMargin=0>
+<P>&nbsp;</P>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=673>
+  <TBODY>
+  <TR>
+    <TD width=201><IMG border=0 height=58 
+      src="images3/logo.png" width=169></TD>
+    <TD width=468><IMG border=0 height=60 
+      src="images3/banner.GIF" width=468></TD>
+  </TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<DIV align=left>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=656>
+  <TBODY>
+  <TR>
+    <TD width=209 rowspan="2"><FONT face=Arial><IMG border=0 height=160 
+      src="images3/e.gif" width=166></FONT></TD>
+    <TD width=443>
+      <DIV align=left>
+      <TABLE border=0 cellPadding=0 cellSpacing=0 height=61 width=443>
+        <TBODY>
+        <TR>
+          <TD height=21 width=441><B><FONT color=#999966 face=Arial 
+            size=4>About Francis Crick </FONT></B>
+            <HR>          </TD></TR>
+        <TR>
+          <TD height=21 width=441>
+            <DIV align=center>
+              <p><FONT color="#999966"><span class="style5">He was born in England
+  . He found the configuration of DNA in 1953 in England.</span></FONT> </p>
+              <p><FONT color="#999966" face=Arial>  <SCRIPT src=""></SCRIPT>
+              </FONT></p>
+            </DIV></TD>
+        </TR>
+        <TR>
+          <TD height=74 width=441><div align="center"><span class="style8"> 7.28.2004, Fransis Crick died in America at the age of 94. As well known , he is one of the greatest biologists in the 20th centrury. </span></div></TD>
+        </TR>
+        <TR>
+          <TD height=19 width=441>
+            <HR>
+          </TD></TR></TBODY></TABLE></DIV>
+      <P align="right" class="style8">by Yuukiri </P></TD></TR>
+  <TR>
+    <TD><div align="center"><span class="style8">copyright 2003-2004 Athena Studios All Rights Reserved. </span></div></TD>
+  </TR>
+  </TBODY>
+</TABLE>
+</DIV>
+<BLOCKQUOTE>
+  <P align=center>&nbsp;</P>
+  <P align=center>&nbsp;</P>
+  <P align=center>&nbsp;</P></BLOCKQUOTE>  
+</BODY></HTML>

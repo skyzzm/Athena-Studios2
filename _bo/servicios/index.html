@@ -1,0 +1,380 @@
+<html>
+<head>
+<title>Athena</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../js_css/treelogic.css">
+<SCRIPT LANGUAGE="JavaScript" SRC="../js_css/dynlayer.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../js_css/dynlayer-glide.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="../js_css/reescal.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+var zona=0;
+var numservicios=6;
+var multiplicador=0;
+var activo=0;
+var numeroejecuciones=0;
+var anchotabla=(numservicios+1)*760;
+
+function init() 
+{
+	parent.defaultStatus = 'treelogic::servicios';
+	setTimeout('finaliza()',1000)
+	test();
+	DynLayerInit();
+	irintro();
+	pos_xy_init();	
+	CambiaCabeza();
+}
+
+function finaliza ()
+{
+	multiplicador=100/numeroejecuciones;
+	numeroejecuciones=-1000;
+}
+
+
+function test ()
+{
+	numeroejecuciones++;
+	if (numeroejecuciones>0) setTimeout('test()',10);
+}
+
+var cargado=1;
+
+function irintro()
+{
+contenidoServicios.glideTo('fast','slow',0,15,10,100);
+}
+
+function pos_xy_init()
+{
+	document.onmousemove = mouseMove
+	if (is.ns) document.captureEvents(Event.MOUSEMOVE)
+}
+
+function mirada(i)
+{
+if (i<0) parent.parent.paisarelleno.ojosclinotizda(); else parent.parent.paisarelleno.ojosclinothizda();
+if (i>0) parent.parent.paisarelleno.ojosclinotdcha(); else parent.parent.paisarelleno.ojosclinothdcha();
+}
+
+
+
+function mouseMove(e)
+{
+	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+	//status = "multiplicador: "+multiplicador;
+	if (cargado) 
+	{
+		if  ((y>10)&&(y<130)) 
+		{	
+			if(x<250) zona=-1;
+			else if(x<510) zona=0;
+			else if(x<610) zona=1;
+			if (activo==0) CambiaCabeza();
+			velocidad=zona*multiplicador;
+			activo=1;
+		}			
+		else 
+		{
+			if (activo==1) CambiaCabeza();
+			activo=0;zona=0;
+		}
+		mirada(zona);
+	}	
+}
+
+function CambiaCabeza()
+{
+	if (activo==1)
+	//si activo es 1 entonces ESTA FUERA del frame superior
+	{
+		if (!is.ns) parent.parent.paisarelleno.document.all.cabeza.src='images/ani_clientes_off.gif';
+		else parent.parent.paisarelleno.document.cuerpo.document.cabeza.src='../images/ani_clientes_off.gif';
+	}
+	else 
+	{
+		if (!is.ns) parent.parent.paisarelleno.document.all.cabeza.src='images/ani_clientes.gif';	
+		else parent.parent.paisarelleno.document.cuerpo.document.cabeza.src='../images/ani_clientes.gif';
+	}
+}
+
+function servicios(numcat)
+{
+vetehasta=-((numcat+1)*760);
+contenidoServicios.glideTo('slow','slow',vetehasta,15,10,100);
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() 
+{//v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+//***********************************************************
+function openbanner(sURL)
+  {open(sURL,"popupnav","scrollbars=no,location=no,toolbar=no,directories=no,menubar=no,resizable=no,resize=no,status=no,width=650,height=435");}
+  
+</SCRIPT>
+<style type="text/css">
+<!--
+.style2 {font-size: 10px}
+.style3 {color: #FFFFFF}
+.style4 {font-size: 10px; color: #FFFFFF; }
+.style5 {font-size: 9}
+.style7 {font-size: 9px; color: #FFFFFF; }
+.style8 {font-size: 12px}
+.style9 {color: #CCCCCC}
+.style11 {color: #666666}
+.style13 {color: #CCCCCC; font-family: "Comic Sans MS"; }
+.style14 {font-family: "Comic Sans MS"}
+-->
+</style>
+</head>
+
+<body bgcolor="#71B4FF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" onload="init();">
+
+<div id="maskizda" style="position:absolute; width:145px; height:134px; z-index:25; top: 0px; background-image:  url('../images/maskaraizda.gif'); layer-background-image:  url(../images/maskaraizda.gif); border: 0px none #000000; left: 0px; visibility: visible"></div>
+
+<div id="maskder" style="position:absolute; width:145px; height:134px; z-index:26; top: 0px; background-image:  url('../images/maskarader.gif'); layer-background-image:  url(../images/maskarader.gif); left: 615px; border: 0px none #000000; visibility: visible"></div>
+
+<div id="contenidoServiciosDiv" style="position:absolute; left: 760px; top: 15px; width: 5320 px; height: 140px; z-index: 4; visibility: visible"> 
+  <table border="0" cellspacing="0" cellpadding="0" height="75" width="5320">
+      <tr> 
+<!--servicios-->
+      <td align="center" height="75" rowspan="2" valign="top" width="760"> 
+        <table width="450" border="0" cellspacing="0" cellpadding="0">
+          <tr bgcolor="99ccff"> 
+            <td>
+              <table width="450" border="0" cellspacing="1" cellpadding="2">
+                <tr align="left"> 
+                <td bgcolor="000000">
+                <img src="../images/dian.gif" width="17" height="17" border="0"></td>
+                <td colspan="3" class="verdana8" height="15" bgcolor="#000080"><font color="#FFFFFF">&nbsp;</font></td>
+                </tr>
+<!--<tr>
+<td height="17" bgcolor="71b4ff" colspan="4">&nbsp;</td></tr>-->
+                <tr> 
+                  <td height="15" width="20" align="center" bgcolor="71b4ff"><a href="javascript:servicios(0);">
+                  <img src="../images/ico_dcha_on.gif" width="17" height="16" border="0"></a></td>
+                  <td class="verdana8" bgcolor="71b4ff" width="205"><a href="../../Athena%20Studio.htm" class="enlace">
+                  Index</a></td>
+                  <td height="20" width="20" align="center" bgcolor="71b4ff"><a href="javascript:servicios(0);">
+                  <img src="../images/ico_dcha_on.gif" width="18" height="16" border="0"></a></td>
+                  <td class="verdana8" bgcolor="71b4ff" width="200" height="20"><a href="../../keep.html" class="enlace">
+                  Keep</a></td>
+                </tr>
+                <tr> 
+                  <td height="20" width="20" align="center" bgcolor="71b4ff"><a href="javascript:servicios(0);">
+                  <img src="../images/ico_dcha_on.gif" width="17" height="16" border="0"></a></td>
+                  <td class="verdana8" bgcolor="71b4ff" width="205"><a href="../../contact.html" class="enlace">
+                  contact</a></td>
+                  <td height="20" width="20" align="center" bgcolor="71b4ff"><a href="javascript:servicios(0);">
+                  <img src="../images/ico_dcha_on.gif" width="17" height="16" border="0"></a></td>
+                  <td class="verdana8" bgcolor="71b4ff" width="175"><a href="../index.html" class="enlace">
+                  special</a></td>
+                </tr>
+                <tr> 
+                  <td height="20" width="20" align="center" bgcolor="71b4ff"><a href="javascript:servicios(0);">
+                  <img src="../images/ico_dcha_on.gif" width="17" height="16" border="0"></a></td>
+                  <td class="verdana8" bgcolor="#71B4FF" width="205"><a href="../../about.htm" class="enlace">
+                  about</a></td>
+                  <td height="20" width="20" align="center" bgcolor="71b4ff"><a href="javascript:servicios(0);">
+                  <img src="../images/ico_dcha_on.gif" width="17" height="16" border="0"></a></td>
+                  <td class="verdana8" bgcolor="71b4ff" width="205"><a href="javascript:Athena Studios" class="enlace">
+                  Map</a></td>
+                </tr>
+                <tr> 
+                  <td height="17" colspan="4" class="verdana8" bgcolor="71b4ff" align="right"><a href="javascript:servicios(0)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sigue1','','../images/ico_dcha_on.gif',1)">Music Down<img src="../images/ico_dcha_off.gif" width="15" height="15" border="0" name="sigue1"></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+<!--fin categorias-->
+<!--categoria 0-->
+        <td align="center" height="134" rowspan="2" valign="top" width="760">
+        <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+          <tr bgcolor="99ccff"> 
+            <td> 
+              <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+                <tr> 
+                  <td align="left" height="17" width="17" bgcolor="#000080">
+                  <img src="../images/dian.gif" width="17" height="17" border="0"></td>
+                  <td align="left" height="17" width="425" colspan="2" class="verdana8" bgcolor="#000080">&nbsp;<font color="#FFFFFF">Athena Studios&#8482;  BLUE (from EMI)</font></td>
+                </tr>
+                <tr>
+                  <td bgcolor="71b4ff">　</td>	 
+                  <td align="center" height="75" class="verdana8" bgcolor="71b4ff">                  <p class="style2"><font color="#FFFFFF"><a href="../../media/blue_one%20love.asf">One love</a></font><span class="style3"><span class="style11"> Album:</span> &lt;One Love&gt; </span></p>
+                    <p class="style4"><a href="../../media/blue-When%20Summers%20Gone.wma">When Summer's Gone</a><span class="style11"> Album:</span> &lt;Crime&gt;</p>
+                    <p class="style4"><a href="../../media/Blue-Alive.wma">Alive </a><span class="style11">Album: </span>&lt;Crime&gt;</p></td>
+                  <td bgcolor="71b4ff">　</td>	 
+                </tr>
+                <tr> 
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:javascript:irintro()"><img src="../images/ico_izda_off.gif" width="15" height="15" border="0" name="vuelve"></a></font></td>
+                  <td align="center" height="15" width="410" bgcolor="71b4ff" >　</td>
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:servicios(1)"><img src="../images/ico_dcha_off.gif" width="15" height="15" border="0" name="sigue"></a></font></td>
+                </tr>
+              </table>
+          </tr>
+		  </table>
+		</td>
+<!--fin categoria -->
+<!--categoria 1-->
+      <td align="center" height="134" rowspan="2" valign="top" width="760"> 
+        <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+          <tr bgcolor="99ccff"> 
+            <td> 
+              <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+                <tr> 
+                  <td align="left" height="17" width="17" bgcolor="#000080">
+                  <img src="../images/dian.gif" width="17" height="17" border="0"></td>
+                  <td align="left" height="17" width="425" colspan="2" class="verdana8" bgcolor="#000080"> 
+                    <font color="#FFFFFF"> Athena Studios&#8482; U2 (from BMG) </font></td>
+                </tr>
+                <tr> 
+                  <td bgcolor="71b4ff">　</td>
+                  <td height="75" align="center" bgcolor="71b4ff" class="style3">                    <p class="style4 style5"><span class="style2"><span class="style8"><a href="../../media/u2%20-%20with%20or%20without%20you.mp3">With or witout you</a> <span class="style11">Album:</span></span></span> <span class="style8">&lt;rattle and hum DVDA&gt;</span></p>
+                  <p class="style4 style8"><a href="../../media/u2%2001%20vertigo.mp3">Vertigo</a> <span class="style11">Album:</span>&lt;How To Dismantle An Atomic Bomb&gt;</p>                  </td>
+                  <td bgcolor="71b4ff">　</td>
+                </tr>
+                <tr> 
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:javascript:irintro()" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('vuelve1','','../images/ico_izda_on.gif',1)"><img src="../images/ico_izda_off.gif" width="15" height="15" border="0" name="vuelve1"></a></font></td>
+                  <td align="center" height="15" width="410" bgcolor="71b4ff" >　</td>
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:servicios(2)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sigue1','','../images/ico_dcha_on.gif',1)"><img src="../images/ico_dcha_off.gif" width="15" height="15" border="0" name="sigue1"></a></font></td>
+                </tr>
+              </table>
+          </tr>
+        </table>
+      </td>
+<!--fin categoria -->
+<!--categoria 2-->
+      <td align="center" height="134" rowspan="2" valign="top" width="760"> 
+        <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+          <tr bgcolor="99ccff"> 
+            <td> 
+              <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+                <tr> 
+                  <td align="left" height="17" width="17" bgcolor="#000080">
+                  <img src="../images/dian.gif" width="17" height="17" border="0"></td>
+                  <td align="left" height="17" width="425" colspan="2" class="verdana8" bgcolor="#000080"><font color="#FFFFFF">Athena Studios&#8482; <font color="#FFFFFF">U2 (from BMG) </font></font></td>
+                </tr>
+                <tr> 
+                  <td bgcolor="71b4ff">　</td>
+                  <td align="center" height="75" class="verdana8" bgcolor="71b4ff">                    <p class="style7"><a href="../../media/u2%2006%20all%20because%20of%20you.mp3">All Because Of You</a> <span class="style4 style5"><span class="style11">Album:</span>&lt;How To Dismantle An Atomic Bomb&gt;</span></p>
+                  <p class="style7"><a href="../../media/u2%2004%20love%20and%20peace%20or%20else.mp3">Love And Peace Or Else</a> <span class="style4 style5"><span class="style11">Album:</span>&lt;How To Dismantle An Atomic Bomb&gt;</span></p></td>
+                  <td bgcolor="71b4ff">　</td>
+                </tr>
+                <tr> 
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:javascript:irintro()" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('vuelve1','','../images/ico_izda_on.gif',1)"><img src="../images/ico_izda_off.gif" width="15" height="15" border="0" name="vuelve1"></a></font></td>
+                  <td align="center" height="15" width="410" bgcolor="71b4ff" >　</td>
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:servicios(3)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sigue1','','../images/ico_dcha_on.gif',1)"><img src="../images/ico_dcha_off.gif" width="15" height="15" border="0" name="sigue1"></a></font></td>
+                </tr>
+              </table>
+          </tr>
+        </table>
+      </td>
+<!--fin categoria -->
+<!--categoria 3-->
+      <td align="center" height="134" rowspan="2" valign="top" width="760"> 
+        <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+          <tr bgcolor="99ccff"> 
+            <td> 
+              <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+                <tr> 
+                  <td align="left" height="17" width="17" bgcolor="#000080">
+                  <img src="../images/dian.gif" width="17" height="17" border="0"></td>
+                  <td align="left" height="17" width="425" colspan="2" class="verdana8" bgcolor="#000080"> 
+                    <font color="#FFFFFF">Athena Studios&#8482; <font color="#FFFFFF">U2 (from BMG) </font></font></td>
+                </tr>
+                <tr> 
+                  <td bgcolor="71b4ff">　</td>
+                  <td height="75" align="center" bgcolor="71b4ff" class="style4 style8">						<p><a href="../../media/u2%2007%20a%20man%20and%20a%20woman.mp3">A Man And A Woman</a> <span class="style4 style5"><span class="style11">Album:</span>&lt;How To Dismantle An Atomic Bomb&gt;</span></p>
+                  <p><a href="../../media/u2%2009%20one%20step%20closer.mp3">One Step Closer</a> <span class="style4 style5"><span class="style11">Album:</span>&lt;How To Dismantle An Atomic Bomb&gt;</span></p></td>
+                  <td bgcolor="71b4ff">　</td>
+                </tr>
+                <tr> 
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:javascript:irintro()" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('vuelve1','','../images/ico_izda_on.gif',1)"><img src="../images/ico_izda_off.gif" width="15" height="15" border="0" name="vuelve1"></a></font></td>
+                  <td align="center" height="15" width="410" bgcolor="71b4ff" ><a href="javascript:openbanner('./fichas/uniom.html')" class="enlace"><font color="#FFFFFF">&nbsp;&nbsp;</font></a></td>
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:servicios(4)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sigue1','','../images/ico_dcha_on.gif',1)"><img src="../images/ico_dcha_off.gif" width="15" height="15" border="0" name="sigue1"></a></font></td>
+                </tr>
+              </table>
+          </tr>
+        </table>
+      </td>
+<!--fin categoria -->
+<!--categoria 4-->
+      <td align="center" height="134" rowspan="2" valign="top" width="760"> 
+        <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+          <tr bgcolor="99ccff"> 
+            <td> 
+              <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+                <tr> 
+                  <td align="left" height="17" width="17" bgcolor="#000080">
+                  <img src="../images/dian.gif" width="17" height="17" border="0"></td>
+                  <td align="left" height="17" width="425" colspan="2" class="verdana8" bgcolor="#000080"> 
+                    &nbsp;&nbsp;<font color="#FFFFFF">Athena Studios&#8482; Avex Trax </font></td>
+                </tr>
+                <tr> 
+                  <td bgcolor="71b4ff">　</td>
+                  <td height="75" align="center" bgcolor="71b4ff" class="verdana8 style3"> <p><a href="../../media/01%20-%20Inspire-Original%20Mix-Mixed%20by%20Koji%20Morimoto.mp3">Inspire </a><span class="style9">Ayumi</span> Album :&lt;Inspire&gt;</p>
+                  <p><a href="../../media/&#22823;&#26080;&#38480;&#20048;&#22242;do%20as%20infinity%20%20&#38451;&#20809;&#26012;&#22369;.mp3">阳光斜坡</a> <span class="style9">Do as Infinity</span> </p></td>
+                  <td bgcolor="71b4ff">　</td>
+                </tr>
+                <tr> 
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:javascript:irintro()" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('vuelve1','','../images/ico_izda_on.gif',1)"><img src="../images/ico_izda_off.gif" width="15" height="15" border="0" name="vuelve1"></a></font></td>
+                  <td align="center" height="15" width="410" bgcolor="71b4ff" >　</td>
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:servicios(5)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sigue1','','../images/ico_dcha_on.gif',1)"><img src="../images/ico_dcha_off.gif" width="15" height="15" border="0" name="sigue1"></a></font></td>
+                </tr>
+              </table>
+          </tr>
+        </table>
+      </td>
+<!--fin categoria -->
+<!--categoria 5-->
+      <td align="center" height="134" rowspan="2" valign="top" width="760"> 
+        <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+          <tr bgcolor="99ccff"> 
+            <td> 
+              <table width="450" height="120" border="0" cellspacing="1" cellpadding="0">
+                <tr> 
+                  <td align="left" height="17" width="17" bgcolor="#000080">
+                  <img src="../images/dian.gif" width="17" height="17" border="0"></td>
+                  <td align="left" height="17" width="425" colspan="2" class="verdana8" bgcolor="#000080"> 
+                    &nbsp;<font color="#FFFFFF">Athena Studios&#8482; China Part </font></td>
+                </tr>
+                <tr> 
+                  <td bgcolor="71b4ff">　</td>
+                  <td height="75" align="center" bgcolor="71b4ff" class="verdana8 style3"><p><span class="style14"><a href="../../media/&#29579;&#33778;-&#31505;&#24536;&#20070;.mp3">笑忘书</a> <span class="style9">王菲</span></span></p>
+                  <p><span class="style14"><a href="../../media/&#28504;&#29614;&#26575;-&#24555;&#20048;&#23815;&#25308;.wma">快乐崇拜</a></span> <span class="style13">潘伟柏</span> </p></td>
+                  <td bgcolor="71b4ff">　</td>
+                </tr>
+                <tr> 
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><font color="#FFFFFF"><a href="javascript:javascript:irintro()" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('vuelve1','','../images/ico_izda_on.gif',1)"><img src="../images/ico_izda_off.gif" width="15" height="15" border="0" name="vuelve1"></a></font></td>
+                  <td align="center" height="15" width="410" bgcolor="71b4ff" >　</td>
+                  <td align="center" height="17" class="verdana8" width="17" bgcolor="71b4ff"><a href="javascript:javascript:irintro()"><img src="../images/ico_dcha_fin.gif" width="15" height="15" border="0"></a></td>
+                </tr>
+              </table>
+          </tr>
+        </table>
+      </td>
+<!--fin categoria -->
+      </tr>
+  </table>
+</div> 
+
+
+</body>
+</html>

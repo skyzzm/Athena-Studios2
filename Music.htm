@@ -1,0 +1,886 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0028)http://www.3idc.com/3idc.php -->
+<HTML><HEAD><TITLE>Music</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<SCRIPT language=JavaScript>
+<!--
+function MM_openBrWindow(theURL,winName,features) { 
+  window.open(theURL,winName,features);
+}
+//-->
+</SCRIPT>
+
+<SCRIPT language=JavaScript> 
+nereidFadeObjects = new Object();
+nereidFadeTimers = new Object();
+function nereidFade(object, destOp, rate, delta){
+if (!document.all)
+return
+    if (object != "[object]"){  //do this so I can take a string too
+        setTimeout("nereidFade("+object+","+destOp+","+rate+","+delta+")",0);
+        return;
+    }
+    clearTimeout(nereidFadeTimers[object.sourceIndex]);
+    diff = destOp-object.filters.alpha.opacity;
+    direction = 1;
+    if (object.filters.alpha.opacity > destOp){
+        direction = -1;
+    }
+    delta=Math.min(direction*diff,delta);
+    object.filters.alpha.opacity+=direction*delta;
+    if (object.filters.alpha.opacity != destOp){
+        nereidFadeObjects[object.sourceIndex]=object;
+        nereidFadeTimers[object.sourceIndex]=setTimeout("nereidFade(nereidFadeObjects["+object.sourceIndex+"],"+destOp+","+rate+","+delta+")",rate);
+    }
+}
+
+</SCRIPT>
+
+<STYLE type=text/css>A:link {
+	COLOR: #cccccc; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #cccccc; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #a5a27b; TEXT-DECORATION: none
+}
+A.a1:link {
+	COLOR: #a5a27b; TEXT-DECORATION: none
+}
+A.a1:visited {
+	COLOR: #a5a27b; TEXT-DECORATION: none
+}
+A.a1:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.a1:hover {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.a2:link {
+	FILTER: alpha(opacity=40%)
+}
+A.a2:hover {
+	FILTER: alpha(opacity=100%)
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #a1a198; SCROLLBAR-HIGHLIGHT-COLOR: #eaeaea; SCROLLBAR-3DLIGHT-COLOR: #4d4d4d; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #4d4d4d; SCROLLBAR-DARKSHADOW-COLOR: #000000
+}
+BODY TD {
+	FONT-SIZE: 9px; COLOR: #a5a27b; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.border {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+.button {
+	BORDER-RIGHT: #99cc00 1px solid; BORDER-TOP: #99cc00 1px solid; BORDER-LEFT: #99cc00 1px solid; COLOR: #ffffff; BORDER-BOTTOM: #99cc00 1px solid; BACKGROUND-COLOR: #4d4d4d
+}
+.list {
+	BORDER-RIGHT: 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: 0px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px solid; WIDTH: 120px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px solid; HEIGHT: 10px; BACKGROUND-COLOR: #63615a
+}
+.opacity {
+	FILTER: alpha(opacity=100%)
+}
+</STYLE>
+
+<META content="Microsoft FrontPage 4.0" name=GENERATOR></HEAD>
+<BODY text=#000000 bgColor=#5d5b5b leftMargin=0 marginheight="0" 
+marginwidth="0"><A name=top></A>
+<TABLE cellSpacing=0 cellPadding=0 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD width=186 background=images4/3idc-03.gif height=137 rowSpan=5> <OBJECT 
+      codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+      height=137 width=186 classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+        <PARAM NAME="movie" VALUE="images4/3idc_logo.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+      								<embed src="images4/3idc_logo.swf" quality=high 
+      pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+      type="application/x-shockwave-flash" width="186" height="137" 
+      wmode="transparent">		</embed> 	  </OBJECT></TD>
+    <TD><IMG height=19 src="images4/3idc-04.gif" width=21><IMG height=19 
+      src="images4/3idc-05.gif" width=21></TD>
+    <TD align=right><IMG height=19 src="images4/3idc-07.gif" width=11></TD>
+    <TD><IMG height=19 src="images4/3idc-08.gif" width=117></TD>
+    <TD vAlign=bottom>&nbsp;</TD></TR>
+  <TR>
+    <TD><IMG height=22 src="images4/3idc-14.gif" width=21><IMG height=22 
+      src="images4/3idc-15.gif" width=21></TD>
+    <TD><IMG height=22 src="images4/3idc-06.gif" width=151><IMG height=22 
+      src="images4/3idc-11.gif" width=158></TD>
+    <TD><IMG height=22 src="images4/3idc-12.gif" width=117></TD>
+    <TD><IMG height=22 src="images4/3idc-13.gif" width=34></TD>
+  </TR>
+  <TR>
+    <TD align=middle colSpan=3><A href="http://www.cncss.com/" 
+      target=_blank><IMG height=60 src="images4/cwdbanner.gif" width=468 
+      border=0></A></TD>
+    <TD><IMG height=60 src="images4/3idc-17.gif" width=34></TD>
+  </TR>
+  <TR>
+    <TD background=images4/3idc-20.gif colSpan=2><IMG height=17 
+      src="images4/3idc-18.gif" width=24><IMG height=17 
+      src="images4/3idc-19.gif" width=180></TD>
+    <TD align=right background=images4/3idc-20.gif colSpan=2><IMG 
+      height=17 src="images4/3idc-22.gif" width=28><IMG height=17 
+      src="images4/3idc-23.gif" width=46></TD>
+  </TR>
+  <TR>
+    <TD colSpan=4>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=24><IMG height=19 src="images4/3idc-24.gif" 
+          width=24></TD>
+          <TD width="100%" background=images4/3idc-25.gif>&nbsp;</TD>
+          <TD><IMG height=19 src="images4/3idc-27.gif" width=28><IMG 
+            height=19 src="images4/3idc-28.gif" 
+    width=46></TD>
+        </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=688 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD width=23>&nbsp;</TD>
+    <TD colSpan=5><IMG height=30 src="images4/3idc-30.gif" width=163><IMG 
+      height=30 src="images4/3idc-31.gif" width=21><IMG height=30 
+      src="images4/3idc-32.gif" width=451><IMG height=30 
+      src="images4/3idc-33.gif" width=30></TD>
+  </TR>
+  <TR>
+    <TD vAlign=bottom rowSpan=2><IMG height=45 src="images4/3idc-100.gif" 
+      width=23></TD>
+    <TD vAlign=top background=images4/3idc-59.gif><IMG height=227 
+      src="images4/3idc-34.gif" width=12></TD>
+    <TD vAlign=top align=middle background=images4/3idc-58.gif rowSpan=2> 
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD background=images4/3idc-35.gif> <a href="Athena%20Studio.htm"> <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=26 width=151 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+              <param name="_cx" value="3995">
+              <param name="_cy" value="688">
+              <param name="FlashVars" value>
+              <param name="Movie" value="images4/home1.swf">
+              <param name="Src" value="images4/home1.swf">
+              <param name="WMode" value="Transparent">
+              <param name="Play" value="0">
+              <param name="Loop" value="-1">
+              <param name="Quality" value="High">
+              <param name="SAlign" value>
+              <param name="Menu" value="-1">
+              <param name="Base" value>
+              <param name="AllowScriptAccess" value="always">
+              <param name="Scale" value="ShowAll">
+              <param name="DeviceFont" value="0">
+              <param name="EmbedMovie" value="0">
+              <param name="BGColor" value>
+              <param name="SWRemote" value>
+              <param name="MovieData" value><embed src="images4/home1.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="151" height="26" wmode="transparent"> 			</OBJECT></a></TD></TR>
+        <TR>
+          <TD background=images4/3idc-42.gif> <a href="_bo/index.html"> <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=26 width=151 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+              <PARAM NAME="movie" VALUE="images4/works1.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+            			  			  			  			  <embed src="images4/works1.swf" quality=high 
+            pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+            type="application/x-shockwave-flash" width="151" height="26" 
+            wmode="transparent">			  </embed> 			</OBJECT></a></TD></TR>
+        <TR>
+          <TD background=images4/3idc-49.gif> <a href="_kind/redfile.html"> <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=26 width=151 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+              <PARAM NAME="movie" VALUE="images4/techs1.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+            			  			  			  			  <embed src="images4/techs1.swf" quality=high 
+            pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+            type="application/x-shockwave-flash" width="151" height="26" 
+            wmode="transparent">			  </embed> 			</OBJECT></a></TD></TR>
+        <TR>
+          <TD background=images4/3idc-50.gif> <a href="keep.html"> <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=26 width=151 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+              <PARAM NAME="movie" VALUE="images4/words1.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+                                                                    <embed 
+            src="images4/words1.swf" quality=high 
+            pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+            type="application/x-shockwave-flash" width="151" height="26" 
+            wmode="transparent">              </embed>             
+        </OBJECT></a></TD></TR>
+        <TR>
+          <TD background=images4/3idc-52.gif> <a href="media/Athena.exe"> <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=26 width=151 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+              <PARAM NAME="movie" VALUE="images4/downs1.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+            			  			  			  			  <embed src="images4/downs1.swf" quality=high 
+            pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+            type="application/x-shockwave-flash" width="151" height="26" 
+            wmode="transparent">			  </embed> 			</OBJECT></a></TD></TR>
+        <TR>
+          <TD background=images4/3idc-53.gif> <a href="contact.html"> <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=26 width=151 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+              <param name="_cx" value="3995">
+              <param name="_cy" value="688">
+              <param name="FlashVars" value>
+              <param name="Movie" value="images4/links1.swf">
+              <param name="Src" value="images4/links1.swf">
+              <param name="WMode" value="Transparent">
+              <param name="Play" value="0">
+              <param name="Loop" value="-1">
+              <param name="Quality" value="High">
+              <param name="SAlign" value>
+              <param name="Menu" value="-1">
+              <param name="Base" value>
+              <param name="AllowScriptAccess" value="always">
+              <param name="Scale" value="ShowAll">
+              <param name="DeviceFont" value="0">
+              <param name="EmbedMovie" value="0">
+              <param name="BGColor" value>
+              <param name="SWRemote" value>
+              <param name="MovieData" value><embed src="images4/links1.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="151" height="26" wmode="transparent"> 			</OBJECT></a></TD></TR>
+        <TR>
+          <TD background=images4/3idc-55.gif> <a href="about.htm"> <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=26 width=151 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+              <PARAM NAME="movie" VALUE="images4/about1.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+            			  			  			  			  <embed src="images4/about1.swf" quality=high 
+            pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+            type="application/x-shockwave-flash" width="151" height="26" 
+            wmode="transparent">			  </embed> 			</OBJECT></a></TD></TR>
+        <TR>
+          <TD background=images4/3idc-56.gif height=26> <a href="_kind/html/profile.html"> <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=26 width=151 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>
+              <PARAM NAME="movie" VALUE="images4/guestbook.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+            			  			  			  			  <embed src="images4/guestbook.swf" quality=high 
+            pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+            type="application/x-shockwave-flash" width="151" height="26" 
+            wmode="transparent">			  </embed> 			</OBJECT></a></TD></TR>
+        <TR>
+          <TD><IMG height=17 src="images4/3idc-57.gif" 
+        width=151></TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="90%" border=0>
+        <TBODY>
+        <TR>
+          <TD><FONT color=#ffffff><B>:: </B></FONT><B><A 
+            href="Athena%20Studio.htm"><FONT 
+            color=#999966>Athena.</FONT></A></B></TD>
+        </TR></TBODY></TABLE><!--<table width="84%" cellspacing="1" cellpadding="0">
+		<TR> 
+		  <td background="images4/Sankey.gif" colspan="2" height="95"> 
+			<div align="right"><font color="#FFFFFF">*</font><font color="#A5A27B"> 
+              </font><font color="#FFFFFF">Sankey</font> &nbsp;&nbsp;&nbsp;&nbsp;<br>
+			  <br>
+			  Male <font color="#FFFFFF">-</font>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+			  Designer <font color="#FFFFFF">-</font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFFFFF"><br>
+			  <a href="mailto:sankey@21cn.com">Email</a> -</font>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+			  750471:Q<font color="#FFFFFF">-</font>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		  </td>
+		</tr>
+		<tr>
+		  <td colspan="2">&nbsp;</td>
+		</tr>
+		<tr> 
+		  <td background="images4/demon.gif" colspan="2" height="95"><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp; 
+            *</font><font color="#A5A27B"></font><font color="#FFFFFF"> Demon<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;-</font> Male<br>
+			<font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;- <a href="mailto:szdemon@netease.com">Email</a></font><font color="#FFFFFF"><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;-</font> Programer<font color="#FFFFFF"></font><font color="#FFFFFF"></font><font color="#FFFFFF"><a href="mailto:sankey@21cn.com"> 
+			<br>
+			</a>&nbsp;&nbsp;&nbsp;&nbsp;- </font>Q :1580189 <font color="#FFFFFF"></font><font color="#FFFFFF"><a href="mailto:sankey@21cn.com"> 
+			<br>
+			</a></font></td>
+		</tr>
+		<tr> 
+		  <td colspan="2">&nbsp;</td>
+		</tr>
+	  </table>-->
+      <TABLE cellSpacing=0 cellPadding=1 width="90%" border=0>
+        <TBODY>
+        <TR>
+          <TD height=20><FONT color=#ffffff><B>:: </B></FONT><B>Hot 
+          Techs</B></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=1 cellPadding=0 width="84%">
+        <TBODY> 
+        <TR> 
+          <TD width=8><FONT color=#ffffff>-</FONT> </TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR> 
+          <TD width=8><FONT color=#ffffff>-</FONT> </TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR> 
+          <TD width=8><FONT color=#ffffff>-</FONT> </TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR> 
+          <TD width=8><FONT color=#ffffff>-</FONT> </TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR> 
+          <TD width=8><FONT color=#ffffff>-</FONT> </TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        </TBODY>
+      </TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="90%" border=0>
+        <TBODY>
+        <TR>
+          <TD height=20><FONT color=#ffffff><B>:: </B></FONT><strong>Specials</strong></TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=1 cellPadding=0 width="84%">
+        <TBODY> 
+        <TR> 
+          <TD width=8><div align="center"><a href="_bo/index.html">special </a></div></TD>
+        </TR>
+        <TR> 
+          <TD width=8 height="22"><a href="_kind/redfile.html">redfiles </a></TD>
+        </TR>
+        <TR> 
+          <TD width=8 height="24"><a href="gd/Sp%20for%20you.htm">Foryou</a> </TD>
+        </TR>
+        <TR> 
+          <TD width=8><a href="_Site/index.htm">sitemap </a></TD>
+        </TR>
+        <TR> 
+          <TD width=8>&nbsp;</TD>
+        </TR>
+        </TBODY>
+      </TABLE>
+      <TABLE cellSpacing=0 cellPadding=1 width="90%" border=0>
+        <TBODY>
+        <TR>
+          <TD height=20><FONT color=#ffffff><B>:: 
+        </B></FONT><B>Links</B></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=1 cellPadding=0 width="84%">
+        <TBODY>
+        <TR>
+          <TD width="44%" height=40>
+            <DIV align=center><a href="keep.html">Keep</a></DIV>
+          </TD></TR>
+        <TR>
+          <TD width="44%" height=40>
+            <DIV align=center><a href="contact.html">contact</a></DIV>
+          </TD></TR>
+        <TR>
+          <TD><div align="center"><font color="#ffffff"><a href="about.htm">about</a></font></div></TD>
+        </TR>
+        <TR>
+          <TD><div align="center"><a href="main.htm">main</a></div></TD>
+        </TR>
+        <TR>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR>
+          <TD align=middle height=30>
+            <SCRIPT language=JavaScript>
+function change() {
+  document.link_form.target="_blank";
+  document.link_form.action=document.link_form.web_url.value;
+  document.link_form.submit();
+}
+</SCRIPT>
+
+            <FORM style="MARGIN: 0px" name=link_form method=get><SELECT 
+            class=list onchange=change() name=web_url>
+              <option>Athena Studios</option>
+              <option value="">Home</option>
+              </SELECT> 
+            </FORM></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width=21 background=images4/3idc-46.gif><IMG height=15 
+      src="images4/3idc-36.gif" width=21><IMG height=16 
+      src="images4/3idc-39.gif" width=21><IMG height=13 
+      src="images4/3idc-43.gif" width=21> </TD>
+    <TD vAlign=top align=middle rowSpan=2>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD colSpan=2 height=15><IMG height=15 src="images4/3idc-37.gif" 
+            width=451></TD>
+        </TR>
+        <TR>
+          <TD width=99 background=images4/3idc-40.gif height=16> 
+            <DIV align=center><FONT color=#ffffff>Load Music</FONT></DIV></TD>
+          <TD><IMG height=16 src="images4/3idc-41.gif" width=352></TD>
+        </TR>
+        <TR>
+          <TD colSpan=2 height=13><IMG height=13 
+            src="images4/3idc-44a.gif" width=122></TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=9><IMG height=7 src="images4/3idc-69.gif" width=9></TD>
+          <TD width="100%" background=images4/3idc-70.gif></TD>
+          <TD width=12><IMG height=7 src="images4/3idc-72.gif" 
+        width=12></TD>
+        </TR>
+        <TR>
+          <TD colSpan=3>
+            <TABLE height=136 cellSpacing=0 cellPadding=0 width="100%" 
+              border=0><TBODY>
+              <TR>
+                <TD width=7 background=images4/3idc-77.gif 
+                rowSpan=3>&nbsp;</TD>
+                <TD background=images4/3idc-78.gif rowSpan=3>
+                  <p>
+                   
+                  Ayumi Hamasaki: <a href="media/01%20-%20Inspire-Original%20Mix-Mixed%20by%20Koji%20Morimoto.mp3">Inspire </a></IFRAME>
+                  </p>                  <p>
+    Blue:<a href="media/blue_one%20love.asf">One love / </a> <a href="media/Blue-Alive.wma">Alive</a><a href="media/blue-When%20Summers%20Gone.wma">/ When Summer's Gone</a></IFRAME>
+   </p>
+                  <p>U2:<a href="media/beautiful%20day%20u2.mp3">Beautiful day  </a>/  <a href="media/u2%20-%20with%20or%20without%20you.mp3">with or without you</a> / <a href="media/u2%2001%20vertigo.mp3">vertigo</a> /<a href="media/u2%2004%20love%20and%20peace%20or%20else.mp3"> love and peace or else </a>/ <a href="media/u2%2006%20all%20because%20of%20you.mp3">all because of you</a> / <a href="media/u2%2007%20a%20man%20and%20a%20woman.mp3">a man and a woman</a> / <a href="media/u2%2009%20one%20step%20closer.mp3">one step closer</a></p>
+                  <p>Do as infinity: <a href="media/&#22823;&#26080;&#38480;&#20048;&#22242;do%20as%20infinity%20%20&#38451;&#20809;&#26012;&#22369;.mp3">&#38451;&#20809;&#26012;&#22369;</a></p>
+                  <p>f.i.r.:<a href="media/f.i.r&#65293;ladia.wma"> Ladia </a></p>
+                  <p>Westlife:<a href="media/My%20Love.wma"> My Love</a></p>
+                  <p>
+                   &#29579;&#33778;:<a href="media/&#29579;&#33778;-&#31505;&#24536;&#20070;.mp3"> &#31505;&#24536;&#20070;</a></IFRAME>
+</p>
+                  <p>&#28504;&#29614;&#26575;: <a href="media/&#28504;&#29614;&#26575;-&#24555;&#20048;&#23815;&#25308;.wma">&#24555;&#20048;&#23815;&#25308;</a></p>
+                  <p>&nbsp;</p></TD>
+                <TD vAlign=top width=10 background=images4/new_bg.gif 
+                height=10><IMG 
+                  src="images4/new_05.gif" alt="press it move up fast" width=10 height="10" 
+                  class=opacity onmousedown=movover();movstar(-3,2) onmouseup=movover();movstar(-1,20) 
+                  onmouseover=movstar(-1,20);o_down(this) 
+                  onmouseout=movover();o_up(this)></TD>
+                <SCRIPT>
+function movstar(a,time){
+	movx=setInterval("mov("+a+")",time)
+	}
+function movover(){
+	clearInterval(movx)
+	}
+function mov(a){
+	scrollx=new_date.document.body.scrollLeft
+	scrolly=new_date.document.body.scrollTop
+	scrolly=scrolly+a
+	new_date.window.scroll(scrollx,scrolly)
+	}
+function o_down(theobject){
+object=theobject
+	while(object.filters.alpha.opacity>60){
+		object.filters.alpha.opacity+=-10}
+		}
+function o_up(theobject){
+object=theobject
+	while(object.filters.alpha.opacity<100){
+		object.filters.alpha.opacity+=10}
+		}
+function wback(){
+	if(new_date.history.length==0){window.history.back()}
+	else{new_date.history.back()}
+	}
+</SCRIPT>
+
+                <TD width=10 background=images4/3idc-79.gif 
+                rowSpan=3>&nbsp;</TD>
+              </TR>
+              <TR>
+                <TD background=images4/new_bg.gif 
+              height="100%">&nbsp;</TD>
+              </TR>
+              <TR>
+                <TD vAlign=bottom background=images4/new_bg.gif 
+                  height=10><IMG 
+                  src="images4/new_07.gif" alt="press it move down fast" 
+        width=10 height="10" class=opacity 
+                  onmousedown=movover();movstar(3,2) onmouseup=movover();movstar(1,20) 
+                  onmouseover=movstar(1,20);o_down(this) 
+                  onmouseout=movover();o_up(this)></TD>
+              </TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD><IMG height=12 src="images4/3idc-85.gif" width=9></TD>
+          <TD width="100%" background=images4/3idc-87.gif></TD>
+          <TD width=12><IMG height=12 src="images4/3idc-88.gif" 
+          width=12></TD>
+        </TR></TBODY></TABLE><!--
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+		<tr valign="bottom"> 
+		  <td height="15" colspan="2"><img src="images4/3idc-37a.gif" width=451 height=6></td>
+		</tr>
+		<tr> 
+		  <td width="99" background="images4/3idc-40.gif" height="16"> 
+			<div align="center"> <font color="#FFFFFF">Magazine</font></div>
+		  </td>
+		  <td><img src="images4/3idc-41a.gif" width=352 height=16></td>
+		</tr>
+		<tr> 
+		  <td colspan="2" height="13"><img src="images4/3idc-44a.gif" width=122 height=13></td>
+		</tr>
+	  </table>
+	  <table width="98%" cellpadding="0" cellspacing="0" border="0">
+		<tr> 
+		  <td width="9"><img src="images4/3idc-69.gif" width=9 height=7></td>
+		  <td background="images4/3idc-70.gif" width="100%"></td>
+		  <td width="12"><img src="images4/3idc-72.gif" width=12 height=7></td>
+		</tr>
+		<tr> 
+		  <td colspan="3"> 
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			  <tr> 
+				<td width="7" background="images4/3idc-77.gif">&nbsp;</td>
+				<td background="images4/3idc-78.gif">
+				  <table width="100%">
+                    <tr> 
+                      <td valign="top" width="100%"><font color="#A5A27B" size="4"><b> 
+                        No.1                        </b></font><font face="Geneva, Arial, Helvetica, san-serif" color="#FFFFFF"> 
+                        &gt; </font> 
+                        2002-04-29                        &nbsp;&nbsp;<a href="javascript:MM_openBrWindow('magazine_show.php?magazine_code=No.1','Magazine','width=480,height=420,scrollbars=yes')"> 
+                        ASD                        </a> </td>
+                      <td align="center"><a href="javascript:MM_openBrWindow('magazine_show.php?magazine_code=No.1','Magazine','width=480,height=420,scrollbars=yes')"><img src="images4/magazine/No.1/2303.jpg" width="90" height="60" border="0" vspace="5" align="top" hspace="5"></a>                        <div align="right"><a href="magazine.php" class="a1" >More...</a></div>
+                      </td>
+                    </tr>
+                  </table>
+				</td>
+				<td width="10" background="images4/3idc-79.gif">&nbsp;</td>
+			  </tr>
+			</table>
+		  </td>
+		</tr>
+		<tr> 
+		  <td><img src="images4/3idc-85.gif" width=9 height=12></td>
+		  <td background="images4/3idc-87.gif" width="100%"></td>
+		  <td><img src="images4/3idc-88.gif" width=12 height=12></td>
+		</tr>
+	  </table>-->
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=bottom>
+          <TD colSpan=2 height=15><IMG height=6 src="images4/3idc-37a.gif" 
+            width=451></TD>
+        </TR>
+        <TR>
+          <TD width=99 background=images4/3idc-40.gif height=16> 
+            <DIV align=center><FONT color=#ffffff>Tech Tips</FONT></DIV></TD>
+          <TD><IMG height=16 src="images4/3idc-41a.gif" width=352></TD>
+        </TR>
+        <TR>
+          <TD colSpan=2 height=13><IMG height=13 
+            src="images4/3idc-44a.gif" width=122></TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=9><IMG height=7 src="images4/3idc-69.gif" width=9></TD>
+          <TD width="100%" background=images4/3idc-70.gif></TD>
+          <TD width=12><IMG height=7 src="images4/3idc-72.gif" 
+        width=12></TD>
+        </TR>
+        <TR>
+          <TD colSpan=3>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width=7 background=images4/3idc-77.gif>&nbsp;</TD>
+                <TD background=images4/3idc-78.gif> 
+                  <TABLE width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>floating images4 AD on 
+                        web</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>shaking images4 mouse 
+                        event</FONT></TD>
+                    </TR>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>hide flash rightclick 
+                        menu</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>pixel zoom flash images4</FONT></TD>
+                    </TR>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>type links info cool 
+                        box</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>custom IE right click 
+                        menu</FONT></TD>
+                    </TR>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>cool mouse style No.1</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>preload page code No.1</FONT></TD>
+                    </TR></TBODY></TABLE></TD>
+                <TD width=10 
+              background=images4/3idc-79.gif>&nbsp;</TD>
+              </TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD><IMG height=12 src="images4/3idc-85.gif" width=9></TD>
+          <TD width="100%" background=images4/3idc-87.gif></TD>
+          <TD><IMG height=12 src="images4/3idc-88.gif" 
+        width=12></TD>
+        </TR></TBODY></TABLE>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=bottom>
+          <TD colSpan=2 height=15><IMG height=6 src="images4/3idc-37a.gif" 
+            width=451></TD>
+        </TR>
+        <TR>
+          <TD width=99 background=images4/3idc-40.gif height=16> 
+            <DIV align=center><FONT color=#ffffff>Our Tools</FONT></DIV></TD>
+          <TD><IMG height=16 src="images4/3idc-41a.gif" width=352></TD>
+        </TR>
+        <TR>
+          <TD colSpan=2 height=13><IMG height=13 
+            src="images4/3idc-44a.gif" width=122></TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=9><IMG height=7 src="images4/3idc-69.gif" width=9></TD>
+          <TD width="100%" background=images4/3idc-70.gif></TD>
+          <TD width=12><IMG height=7 src="images4/3idc-72.gif" 
+        width=12></TD>
+        </TR>
+        <TR>
+          <TD colSpan=3>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width=7 background=images4/3idc-77.gif>&nbsp;</TD>
+                <TD background=images4/3idc-78.gif> 
+                  <TABLE width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>ACDSee V5.0 official 
+                        retail Ve</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>SecureFX V 2.0.3</FONT></TD>
+                    </TR>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>Macromedia Flash MX</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>Macromedia Fireworks 
+                        MX</FONT></TD>
+                    </TR>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>Macromedia Dreamweaver 
+                        MX</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>RealOne player v90</FONT></TD>
+                    </TR>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>QuickTime6 installer</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>3D fish Screensaver 
+                        No.2</FONT></TD>
+                    </TR>
+                    <TR>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>3D fish Screensaver 
+                        No.1</FONT></TD>
+                      <TD vAlign=top width=5><FONT 
+                        face="Geneva, Arial, Helvetica, san-serif" 
+                        color=#ffffff>&gt;</FONT></TD>
+                      <TD width="50%"><FONT color=#ffffff>Proxy http V3.10 beta 
+                        1</FONT></TD>
+                    </TR></TBODY></TABLE></TD>
+                <TD width=10 
+              background=images4/3idc-79.gif>&nbsp;</TD>
+              </TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD><IMG height=12 src="images4/3idc-85.gif" width=9></TD>
+          <TD width="100%" background=images4/3idc-87.gif></TD>
+          <TD><IMG height=12 src="images4/3idc-88.gif" 
+        width=12></TD>
+        </TR></TBODY></TABLE>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=bottom>
+          <TD colSpan=2 height=15><IMG height=6 src="images4/3idc-37a.gif" 
+            width=451></TD>
+        </TR>
+        <TR>
+          <TD width=99 background=images4/3idc-40.gif height=16> 
+            <DIV align=center><FONT color=#ffffff>New Works</FONT></DIV></TD>
+          <TD><IMG height=16 src="images4/3idc-41a.gif" width=352></TD>
+        </TR>
+        <TR>
+          <TD colSpan=2 height=13><IMG height=13 
+            src="images4/3idc-44a.gif" width=122></TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=9><IMG height=7 src="images4/3idc-69.gif" width=9></TD>
+          <TD width="100%" background=images4/3idc-70.gif></TD>
+          <TD width=12><IMG height=7 src="images4/3idc-72.gif" 
+        width=12></TD>
+        </TR>
+        <TR>
+          <TD colSpan=3>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width=7 background=images4/3idc-77.gif>&nbsp;</TD>
+                <TD background=images4/3idc-78.gif> 
+                  <TABLE cellPadding=3 width="100%">
+                    <TBODY> 
+                    <TR> 
+                      <TD width="16%"><a href="#"><B><FONT color=#ffffff>::</FONT> 
+                        Web </B></a></TD>
+                      <TD width="16%"><a href="#"><B><FONT color=#ffffff>:: </FONT>Desktop</B></a></TD>
+                      <TD width="16%"><a href="#"><B><FONT color=#ffffff>:: </FONT>Cartoon</B></a></TD>
+                      <TD width="16%"><a href="#"><B><FONT color=#ffffff>:: </FONT>Flash</B></a></TD>
+                      <TD width="16%"><B><FONT color=#ffffff>:: </FONT><A 
+                        class=a1 
+                        href="#">Icon</A></B></TD>
+                      <TD width="16%"><a href="#"><B><FONT color=#ffffff>:: </FONT>Other</B></a></TD>
+                    </TR>
+                    <TR align=middle> 
+                      <TD><A class=a1 
+                        href="#" 
+                        target=_blank><IMG onmouseover=nereidFade(this,100,10,5) 
+                        style="FILTER: alpha(opacity=25)" 
+                        onmouseout=nereidFade(this,25,10,5) height=60 
+                        src="images4/netease_a.gif" width=60 
+border=0></A></TD>
+                      <TD><A class=a1 
+                        href="#" 
+                        target=_blank><IMG onmouseover=nereidFade(this,100,10,5) 
+                        style="FILTER: alpha(opacity=25)" 
+                        onmouseout=nereidFade(this,25,10,5) height=60 
+                        src="images4/3idc_5blue_a.gif" width=60 
+                      border=0></A></TD>
+                      <TD><A class=a1 
+                        href="#" 
+                        target=_blank><IMG onmouseover=nereidFade(this,100,10,5) 
+                        style="FILTER: alpha(opacity=25)" 
+                        onmouseout=nereidFade(this,25,10,5) height=60 
+                        src="images4/sheep_a.gif" width=60 border=0></A></TD>
+                      <TD><A class=a1 
+                        href="#" 
+                        target=_blank><IMG onmouseover=nereidFade(this,100,10,5) 
+                        style="FILTER: alpha(opacity=25)" 
+                        onmouseout=nereidFade(this,25,10,5) height=60 
+                        src="images4/tongo_a.gif" width=60 border=0></A></TD>
+                      <TD><A class=a1 
+                        href="#" 
+                        target=_blank><IMG onmouseover=nereidFade(this,100,10,5) 
+                        style="FILTER: alpha(opacity=25)" 
+                        onmouseout=nereidFade(this,25,10,5) height=60 
+                        src="images4/pig_a.gif" width=60 border=0></A></TD>
+                      <TD><A class=a1 
+                        href="#" 
+                        target=_blank><IMG onmouseover=nereidFade(this,100,10,5) 
+                        style="FILTER: alpha(opacity=25)" 
+                        onmouseout=nereidFade(this,25,10,5) height=60 
+                        src="images4/door_a.gif" width=60 
+                    border=0></A></TD>
+                    </TR>
+                    </TBODY> 
+                  </TABLE>
+                </TD>
+                <TD width=10 
+              background=images4/3idc-79.gif>&nbsp;</TD>
+              </TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD><IMG height=12 src="images4/3idc-85.gif" width=9></TD>
+          <TD width="100%" background=images4/3idc-87.gif></TD>
+          <TD><IMG height=12 src="images4/3idc-88.gif" 
+        width=12></TD>
+        </TR></TBODY></TABLE></TD>
+    <TD vAlign=top width=30 background=images4/3idc-51.gif><IMG height=44 
+      src="images4/3idc-38.gif" width=30><IMG height=32 
+      src="images4/3idc-48.gif" width=30> </TD>
+  </TR>
+  <TR>
+    <TD vAlign=bottom background=images4/3idc-59.gif><IMG height=45 
+      src="images4/3idc-101.gif" width=12></TD>
+    <TD vAlign=bottom width=21 background=images4/3idc-46.gif><IMG 
+      height=140 src="images4/3idc-91.gif" width=21></TD>
+    <TD vAlign=bottom width=30 background=images4/3idc-51.gif><IMG 
+      height=140 src="images4/3idc-92.gif" width=30></TD>
+  </TR>
+  <TR>
+    <TD vAlign=bottom height=14><IMG height=14 src="images4/3idc-100a.gif" 
+      width=23></TD>
+    <TD vAlign=bottom><IMG height=14 src="images4/3idc-101a.gif" 
+    width=12></TD>
+    <TD vAlign=top background=images4/3idc-58.gif><FONT color=#ffffff><IMG 
+      height=14 src="images4/3idc-103.gif" width=17 
+      align=absMiddle>::</FONT> <A 
+      href="#">TOP</A> <FONT 
+      color=#ffffff>::</FONT></TD>
+    <TD vAlign=bottom width=21><IMG height=14 src="images4/3idc-91a.gif" 
+      width=21></TD>
+    <TD vAlign=top>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=16><IMG height=14 src="images4/3idc-102.gif" 
+          width=16></TD>
+          <TD>
+            <DIV align=center><A 
+            href="Athena%20Studio.htm">www.Athena.com</A></DIV>
+          </TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=bottom width=30><IMG height=14 src="images4/3idc-92a.gif" 
+      width=30></TD>
+  </TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=688 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG height=67 src="images4/3idc-104.gif" width=186><IMG height=67 
+      src="images4/3idc-105.gif" width=156><IMG height=67 
+      src="images4/3idc-106.gif" width=120><IMG height=67 
+      src="images4/3idc-107.gif" width=165><IMG height=67 
+      src="images4/3idc-108.gif" width=61></TD>
+  </TR></TBODY></TABLE>
+<SCRIPT language=JavaScript src=""></SCRIPT>
+</BODY></HTML>

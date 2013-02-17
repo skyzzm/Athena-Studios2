@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+
+<title>Keep</title>
+<link rel="stylesheet" href="3col_rightNav.css" type="text/css" />
+<script language="JavaScript">
+
+//names of dropdowns stored here
+f7_droplayer=new Array()
+f7_droplayer[0]="drop1"
+f7_droplayer[1]="drop2"
+f7_droplayer[2]="drop3"
+f7_droplayer[3]="drop4"
+f7_droplayer[4]="drop5"
+f7_droplayer[5]="drop6"
+f7_droplayer[6]="drop7"
+
+
+//simple browser check
+f7_v4=(parseInt(navigator.appVersion)>=4 && parseInt(navigator.appVersion)<=5)?1:0
+f7_ie=(document.all && f7_v4)?1:0
+f7_ns=(document.layers && f7_v4)?1:0
+
+
+//code for drops
+
+function f7_showdrop(thelayer){
+	f7_keep=thelayer; f7_hideall(); f7_showitnow=1
+	f7_showit(thelayer)
+	}
+
+function f7_showit(thelayer){
+		if(f7_ie){ eval(f7_droplayer[thelayer]+'.style.visibility="visible"') }
+		if(f7_ns){ eval('document.'+f7_droplayer[thelayer]+'.visibility="show"');}
+	}
+
+
+function f7_hidedrop(){
+	f7_keep=-1; setTimeout('f7_hideall()',500)
+	}
+
+f7_keep=-1
+
+function f7_hideall(){
+	for(i=0;i<f7_droplayer.length;i++){  
+		f7_hideit=0; f7_checkmousepos(i)
+		if(f7_ie && f7_keep!=i){ 
+			if(f7_hideit){ eval(f7_droplayer[i]+'.style.visibility="hidden"') } 
+			}
+		if(f7_ns && f7_keep!=i){ 
+			if(f7_hideit){ eval('document.'+f7_droplayer[i]+'.visibility="hide"') }
+			}
+		}
+	}
+
+//deal with cursor over layer
+document.onmousemove = f7_getmousepos
+if (f7_ns) document.captureEvents(Event.MOUSEMOVE)
+
+function f7_getmousepos(e){
+	if(f7_ns){f7_mousex=e.pageX; f7_mousey=e.pageY}
+	if(f7_ie){f7_mousex=event.clientX; f7_mousey=event.clientY;}
+	}
+
+function f7_checkmousepos(i){          
+	if(f7_ns){     
+		f7_x_min=eval('document.'+f7_droplayer[i]+'.left')
+		f7_x_max=f7_x_min+eval('document.'+f7_droplayer[i]+'.clip.width')
+		f7_y_min=eval('document.'+f7_droplayer[i]+'.top')
+		f7_y_max=f7_y_min+eval('document.'+f7_droplayer[i]+'.clip.height')
+		}    
+	if(f7_ie){     
+		f7_x_min=eval(f7_droplayer[i]+'.style.pixelLeft')
+		f7_x_max=f7_x_min+eval(f7_droplayer[i]+'.style.pixelWidth')
+		f7_y_min=eval(f7_droplayer[i]+'.style.pixelTop')
+		f7_y_max=f7_y_min+eval(f7_droplayer[i]+'.style.pixelHeight')
+		}
+	if (f7_mousex>=f7_x_min && f7_mousex<=f7_x_max && f7_mousey>=f7_y_min && f7_mousey<=f7_y_max){
+		f7_hideit=0; setTimeout('f7_hideall()',500)
+		}
+	else { f7_hideit=1 }
+	return f7_hideit
+	}
+
+//--></script>
+<style type="text/css">
+<!--
+.dropdown {
+	position: absolute;
+	color:black;
+	width:100px;
+	border: #000000;
+	border-style: solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	background-color: #EFEFEF;
+	layer-background-color: #EFEFEF;
+	top:149px;
+	z-index:1;
+	visibility: hidden;
+	height: 116px;
+}
+.drophead { color:#333333; font: bold 12px Verdana, Arial, Helvetica, sans-serif; text-decoration:none }
+.dropitem { text-decoration:none; color:black; font: 12px Arial, Verdana, Helvetica, sans-serif;}
+.drophead:hover { color:black; text-decoration:none }
+.dropitem:hover { color:black; font: bold }
+
+body {
+	background-color: #FFFFFF;
+	background-image: url(media/back1.png);
+}
+.style1 {
+	font-size: 10%;
+	font-weight: bold;
+}
+.style3 {
+	font-size: 16%;
+	font-weight: bold;
+}
+.style5 {
+	font-size: 9px;
+	font-weight: bold;
+}
+.style7 {font-size: 12pt}
+-->
+</style>
+<script language="javascript"> 
+<!-- 
+
+function on1() 
+{if (!document.images) return; document.a.src = "media/leaf2.png";} 
+function on2() 
+{if (!document.images) return; document.b.src = "media/feelings.png";}
+function on3() 
+{if (!document.images) return; document.c.src = "media/Polite.png";}
+function on4() 
+{if (!document.images) return; document.d.src = "media/Miscellanea.png";}
+function on5() 
+{if (!document.images) return; document.e.src = "media/Athena2.png";}
+function on6() 
+{if (!document.images) return; document.f.src = "media/Monumentalize2.png";}
+
+function off1() 
+{if (!document.images) return; document.a.src = "media/leaf3.png";}
+function off2() 
+{if (!document.images) return; document.b.src = "media/feelings2.png";}
+function off3() 
+{if (!document.images) return; document.c.src = "media/Polite2.png";}
+function off4() 
+{if (!document.images) return; document.d.src = "media/Miscellanea2.png";}
+function off5() 
+{if (!document.images) return; document.e.src = "media/Athena.png";}
+function off6() 
+{if (!document.images) return; document.f.src = "media/Monumentalize.png";}
+
+var imgslist = new Array( 
+"media/leaf2.png", 
+"media/feelings.png", 
+"media/Polite.png", 
+"media/Miscellanea.png", 
+"media/Athena2.png",  
+"media/Monumentalize2.png"); 
+
+var imgs=new Array(); 
+for (x=0; x<imgslist.length; x++) 
+ if (document.images) 
+  {imgs[x]=new Image(); imgs[x].src = imgslist[x];}  
+
+//--> 
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+<body link="#00CC00" vlink="#00CC00" alink="#00CC00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"> 
+<div id="drop1"  class="dropdown" style="left:10px;" onmouseover="f7_showdrop(0)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="Redleaf-turan.html" class="dropitem">Í½È»²Ý</a><br>
+    &#149; <a href="Redleaf-late.html" class="dropitem">ÍíÇï³õ¶¬</a><br>
+    &#149; <a href="RedLeaf-Purple.html" class="dropitem">×Ï»¨µØ¶¡</a><br>
+  &#149; <a href="#" class="dropitem">ºìÒ¶</a></p>
+</div>
+<div id="drop2" class="dropdown" style="left:90px;" onmouseover="f7_showdrop(1)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="Feelings.html" class="dropitem">×ÏËÕ</a></p>
+</div>
+<div id="drop3"  class="dropdown" style="left:160px;" onmouseover="f7_showdrop(2)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="Polite.html" class="dropitem">Polite Letter</a></p>
+</div>
+<div id="drop4"  class="dropdown" style="left:272px;" onmouseover="f7_showdrop(3)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a></p>
+</div>
+<div id="drop5"  class="dropdown" style="left:371px;" onmouseover="f7_showdrop(4)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="Monumentalize.htm" class="dropitem">Monumentalize</a><br> 
+</div>
+<div id="drop6"  class="dropdown" style="left:495px;" onmouseover="f7_showdrop(5)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a><br>
+    &#149; <a href="#" class="dropitem">Link 1</a></p>
+</div>
+<div id="drop7"  class="dropdown" style="left: 651px; width: 107; height: 72px" onmouseover="f7_showdrop(6)" onmouseout="f7_hidedrop()"> 
+  <p>&#149; <a href="_bo/index.html" class="dropitem">Special</a><br>
+    &#149; <a href="_kind/redfile.html" class="dropitem">Redfile</a><br>
+    &#149; <a href="gd/Sp%20for%20you.htm" class="dropitem">Special For You</a></p>
+</div>
+  <tr> 
+    <td colspan="3" height="80"> 
+    <p>
+    </p>    </td>
+  </tr>
+  <tr> 
+<div id="masthead"> 
+  <h1 id="siteName"> <img border="0" src="media/no.1.gif" align="center" width="121" height="34" /><img border="0" src="media/Animation1.gif" width="320" height="100" />
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="254" height="99">
+      <param name="movie" value="media/Athena%20Studio6.swf" />
+      <param name="quality" value="high" />
+      <embed src="media/Athena%20Studio6.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="254" height="99"></embed>
+    </object>
+</h1> 
+  <div id="globalNav"> 
+   <td width="61"> <a href="#"  class="drophead" onmouseover="f7_showdrop(0)" onmouseout="f7_hidedrop()"><b> Red Leaf</b></a> </td>
+   |  <td width="92"> <a href="#"  class="drophead" onmouseover="f7_showdrop(1)" onmouseout="f7_hidedrop()"><b>Feelings</b></a> </td>
+          |<td width="89"><a href="#"  class="drophead" onmouseover="f7_showdrop(2)" onmouseout="f7_hidedrop()">Polite Letters</a> </td> 
+          | <td width="107"> <a href="#"  class="drophead" onmouseover="f7_showdrop(3)" onmouseout="f7_hidedrop()"></a><a href="#"  class="drophead" onmouseover="f7_showdrop(3)" onmouseout="f7_hidedrop()">Miscellanea</a></td> 
+          | 
+	 <td width="71"> <a href="#"  class="drophead" onmouseover="f7_showdrop(4)" onmouseout="f7_hidedrop()">Monumentalize</a> 
+      </td> 
+	 |<td width="68"><a href="#"  class="drophead" onMouseOver="f7_showdrop(5)" onMouseOut="f7_hidedrop()"><b>Autumnal Thinking</b></a> 
+          </td>
+	 | <td width="106"><a href="#"  class="drophead" onMouseOver="f7_showdrop(6)" onMouseOut="f7_hidedrop()"><b>Works</b></a> 
+          </td> 
+  </div> 
+  <h2 id="pageName">Keep</h2> 
+  <div id="breadCrumb"> 
+    <a href="#">Athena</a> / <a href="about.htm">information</a> /<a href="main.htm">main</a></div> 
+</div> 
+<div id="headlines"> 
+  <h3>Headlines</h3> 
+  <p> <td><a href="Redleaf.html" onMouseOver="on1();" onMouseOut="off1();" target="main"><img src="media/leaf3.png" width="100" height="20" border="0" name="a"></a></td>
+  <a href="#">full story...</a> 
+  </p> 
+  <p> 
+  <td><a href="Feelings.html" onMouseOver="on2();" onMouseOut="off2();" target="main"><img src="media/feelings2.png" width="100" height="20" border="0" name="b"></a></td>
+  <a href="#">full story...</a> 
+  </p> 
+  <p> 
+  <td><a href="#" onMouseOver="on3();" onMouseOut="off3();" target="main"><img src="media/Polite2.png" width="100" height="20" border="0" name="c"></a></td>
+  <a href="#">full story...</a> 
+  </p> 
+  <p> 
+  <td><a href="#" onMouseOver="on4();" onMouseOut="off4();" target="main"><img src="media/Miscellanea2.png" width="100" height="20" border="0" name="d"></a></td> <a href="#">full story...</a> 
+  </p> 
+  <p> 
+  <td><a href="Monumentalize.htm" onMouseOver="on6();" onMouseOut="off6();" target="main"><img src="media/Monumentalize.png" width="100" height="20" border="0" name="f"></a></td> 
+  <a href="#">full story...</a> 
+  </p> 
+  <div id="advert"> 
+   <td><a href="#" onMouseOver="on5();" onMouseOut="off5();" target="main"> <img src="media/Athena.png" alt="" width="100" height="50" border="0" name="e" /></a></td> 
+   <p>Athena Studios &#8482; 2004</p>
+   <p>All Rights Reserved. </p>
+  </div> 
+</div> 
+<!-- end masthead --> 
+<div id="content"> 
+  <div class="feature"> 
+    <img src="media/01075992807498.jpg" alt="" width="297" height="240" /> 
+    <h3>Feature title </h3> 
+    <p> 
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie.
+    Sed aliquam sem ut arcu. Phasellus sollicitudin. Vestibulum condimentum facilisis
+    nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.
+    Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo.
+    Praesent aliquet pretium erat. Praesent non odio. Pellentesque a magna a
+    mauris vulputate lacinia. Aenean viverra. Class aptent taciti sociosqu ad
+    litora torquent per conubia nostra, per inceptos hymenaeos. Aliquam lacus.
+    Mauris magna eros, semper a, tempor et, rutrum et, tortor.
+    </p> 
+  </div> 
+  <div class="story"> 
+    <h3>Story Title</h3> 
+    <p> 
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie.
+    Sed aliquam sem ut arcu. Phasellus sollicitudin. Vestibulum condimentum facilisis
+    nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.
+    Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo.
+    Praesent aliquet pretium erat. Praesent non odio. Pellentesque a magna a
+    mauris vulputate lacinia. Aenean viverra. Class aptent taciti sociosqu ad
+    litora torquent per conubia nostra, per inceptos hymenaeos. Aliquam lacus.
+    Mauris magna eros, semper a, tempor et, rutrum et, tortor.
+    </p> 
+    <p> 
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie.
+    Sed aliquam sem ut arcu. Phasellus sollicitudin. Vestibulum condimentum facilisis
+    nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.
+    Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo.
+    Praesent aliquet pretium erat. Praesent non odio. Pellentesque a magna a
+    mauris vulputate lacinia. Aenean viverra. Class aptent taciti sociosqu ad
+    litora torquent per conubia nostra, per inceptos hymenaeos. Aliquam lacus.
+    Mauris magna eros, semper a, tempor et, rutrum et, tortor.
+    </p> 
+  </div> 
+  <div class="story"> 
+    <h3>Story Title</h3> 
+    <p> 
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie.
+    Sed aliquam sem ut arcu. Phasellus sollicitudin. Vestibulum condimentum facilisis
+    nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.
+    Cras venenatis. Aliquam posuere lobortis pede. N
+      <bgsound src="media/09 - ÇúÄ¿ 9.rmj"  loop = "-1" />
+      ullam fringilla urna id leo.
+    Praesent aliquet pretium erat. Praesent non odio. Pellentesque a magna a
+    mauris vulputate lacinia. Aenean viverra. Class aptent taciti sociosqu ad
+    litora torquent per conubia nostra, per inceptos hymenaeos. Aliquam lacus.
+    Mauris magna eros, semper a, tempor et, rutrum et, tortor.
+    </p> 
+    <p> 
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie.
+    Sed aliquam sem ut arcu. Phasellus sollicitudin. Vestibulum condimentum facilisis
+    nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.
+    Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo.
+    Praesent aliquet pretium erat. Praesent non odio. Pellentesque a magna a
+    mauris vulputate lacinia. Aenean viverra. Class aptent taciti sociosqu ad
+    litora torquent per conubia nostra, per inceptos hymenaeos. Aliquam lacus.
+    Mauris magna eros, semper a, tempor et, rutrum et, tortor.
+    </p> 
+  </div> 
+</div> 
+<!-- end content --> 
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="#"> 
+      <label>search</label> 
+      <input type="text" size ="10" /> 
+      <input type="submit" value="go" /> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <h3>Section Links</h3> 
+    <ul> 
+      <li>
+        <div align="center" class="style1"><a href="Redleaf.html" class="style7">¼t È~</a></div>
+      </li> 
+      <li>
+        <div align="center" class="style3"><a href="Feelings.html" class="style7">×Ï ÌK</a></div>
+      </li> 
+      <li> 
+        <div align="center" class="style5"><a href="#" class="style7">&#39080; &#38597; </a> </div>
+      </li> 
+      <li>
+        <div align="center" class="style7"><a href="#" class="style7"><strong>ëj Ó›</strong></a></div>
+      </li> 
+      <li>
+        <div align="center" class="style7"><a href="Monumentalize.htm" class="style7"><strong>&#35352; &#24565;</strong></a></div>
+      </li> 
+      <li>
+        <div align="center" class="style7"><a href="#" class="style7"><strong>&#31179; &#24605;</strong></a></div>
+      </li> 
+	  <li>
+      </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>&nbsp;</h3>
+    <h3>Related Link Category</h3>
+    <ul> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Related Link Category</h3> 
+    <ul> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+      <li><a href="#">Related Link</a></li> 
+    </ul> 
+  </div> 
+</div> 
+<!--end navBar div --> 
+<div id="siteInfo"> 
+  <img src="media/Animation4.gif" width="111" height="33" /> <a href="about.htm">About Us</a> | <a href="#">Site
+  Map</a> | <a href="#">Privacy Policy</a> | <a href="contact.html">Contact Us</a> | &copy;2004
+  Athena Studios
+  <bgsound src="media/ºÍÐ³.WAV"  loop = "-1" />
+</div> 
+<br /> 
+<SCRIPT LANGUAGE="JavaScript"> 
+if (document.all) { 
+yourLogo = "Valenti Athena Studios"; 
+logoFont = "Comic Sans MS"; 
+logoColor = "#CC9999"; 
+yourLogo = yourLogo.split(''); 
+L = yourLogo.length; 
+TrigSplit = 360 / L; 
+Sz = new Array() 
+logoWidth = 100; 
+logoHeight = -30; 
+ypos = 0; 
+xpos = 0; 
+step = 0.03; 
+currStep = 0; 
+document.write('<div id="outer" style="position:absolute;top:0px;left:0px"><div style="position:relative">'); 
+for (i = 0; i < L; i++) { 
+document.write('<div id="ie" style="position:absolute;top:0px;left:0px;' 
++'width:10px;height:10px;font-family:'+logoFont+';font-size:12px;' 
++'color:'+logoColor+';text-align:center">'+yourLogo[i]+'</div>'); 
+} 
+document.write('</div></div>'); 
+function Mouse() { 
+ypos = event.y; 
+xpos = event.x - 5; 
+}
+
+document.onmousemove=Mouse; 
+function animateLogo() { 
+outer.style.pixelTop = document.body.scrollTop; 
+for (i = 0; i < L; i++) { 
+ie[i].style.top = ypos + logoHeight * Math.sin(currStep + i * TrigSplit * Math.PI / 180); 
+ie[i].style.left = xpos + logoWidth * Math.cos(currStep + i * TrigSplit * Math.PI / 180); 
+Sz[i] = ie[i].style.pixelTop - ypos; 
+if (Sz[i] < 5) Sz[i] = 5; 
+ie[i].style.fontSize = Sz[i] / 1.7; 
+} 
+currStep -= step; 
+setTimeout('animateLogo()', 20); 
+} 
+window.onload = animateLogo; 
+} 
+</script>
+</body>
+</html>

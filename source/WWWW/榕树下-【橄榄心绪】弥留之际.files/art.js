@@ -1,0 +1,1 @@
+document.write("<a href='http://www.rongshuxia.com/channels/adv/clubme/adclubme.html' target=_blank><img src='http://www.rongshuxia.com/channels/adv/clubme/adclubme.gif' border='0'></a>")

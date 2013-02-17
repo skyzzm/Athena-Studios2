@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>DiDa HTML Editor - www.faico.net/cdida/</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META content="MSHTML 5.00.3502.5390" name=GENERATOR></HEAD>
+<BODY>
+<STYLE type=text/css>.sec1 {
+	BACKGROUND-COLOR: #eeeeee; BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BORDER-RIGHT: gray 1px solid; BORDER-TOP: #ffffff 1px solid; COLOR: #000000; CURSOR: hand
+}
+.sec2 {
+	BACKGROUND-COLOR: #d4d0c8; BORDER-LEFT: #ffffff 1px solid; BORDER-RIGHT: gray 1px solid; BORDER-TOP: #ffffff 1px solid; COLOR: #000000; CURSOR: hand; FONT-WEIGHT: bold
+}
+.main_tab {
+	BACKGROUND-COLOR: #d4d0c8; BORDER-BOTTOM: gray 1px solid; BORDER-LEFT: #ffffff 1px solid; BORDER-RIGHT: gray 1px solid; COLOR: #000000
+}
+</STYLE>
+<!--JavaScript部分-->
+<SCRIPT language=javascript>
+     function secBoard(n)
+  {
+    for(i=0;i<secTable.cells.length;i++)
+      secTable.cells[i].className="sec1";
+    secTable.cells[n].className="sec2";
+    for(i=0;i<mainTable.tBodies.length;i++)
+      mainTable.tBodies[i].style.display="none";
+    mainTable.tBodies[n].style.display="block";
+  }
+      </SCRIPT>
+<!--HTML部分-->
+<TABLE border=0 cellPadding=0 cellSpacing=0 id=secTable width=549>
+  <TBODY>
+  <TR align=middle height=20>
+    <TD class=sec2 onclick=secBoard(0) width="10%">关于TBODY标记</TD>
+    <TD class=sec1 onclick=secBoard(1) width="10%">关于cells集合</TD>
+    <TD class=sec1 onclick=secBoard(2) width="10%">关于tBodies集合</TD>
+    <TD class=sec1 onclick=secBoard(3) 
+width="10%">关于display属性</TD></TR></TBODY></TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=0 class=main_tab height=240 
+id=mainTable width=549><!--关于TBODY标记-->
+  <TBODY style="DISPLAY: block">
+  <TR>
+    <TD align=middle vAlign=top><BR><BR>
+      <TABLE border=0 cellPadding=0 cellSpacing=0 width=490>
+        <TBODY>
+        <TR>
+          <TD>指定行做为表体。<BR>注释：TBODY要素是块要素，并且需要结束标签。<BR>　　　即使如果表格没有显式定义TBODY要素，该要素也提供给所有表。<BR><BR>参考：《动态HTML参考和开发应用大全》（人民邮电出版社 
+            Microsoft Corporation著 
+    北京华中兴业科技发展有限公司译）<BR><BR></TD></TR></TBODY></TABLE></TD></TR></TBODY><!--关于cells集合-->
+  <TBODY style="DISPLAY: none">
+  <TR>
+    <TD align=middle vAlign=top><BR><BR>
+      <TABLE border=0 cellPadding=0 cellSpacing=0 width=490>
+        <TBODY>
+        <TR>
+          <TD>检索表行或者整个表中所有单元格的集合。<BR>应用于TR、TABLE。<BR><BR>参考：《动态HTML参考和开发应用大全》（人民邮电出版社 
+            Microsoft Corporation著 
+    北京华中兴业科技发展有限公司译）<BR><BR></TD></TR></TBODY></TABLE></TD></TR></TBODY><!--关于tBodies集合-->
+  <TBODY style="DISPLAY: none">
+  <TR>
+    <TD align=middle vAlign=top><BR><BR>
+      <TABLE border=0 cellPadding=0 cellSpacing=0 width=490>
+        <TBODY>
+        <TR>
+          <TD>检索表中所有TBODY对象的集合。对象在该集合中按照HTML源顺序排列。<BR>应用于TABLE。<BR><BR>参考：《动态HTML参考和开发应用大全》（人民邮电出版社 
+            Microsoft Corporation著 
+    北京华中兴业科技发展有限公司译）<BR><BR></TD></TR></TBODY></TABLE></TD></TR></TBODY><!--关于display属性-->
+  <TBODY style="DISPLAY: none">
+  <TR>
+    <TD align=middle vAlign=top><BR><BR>
+      <TABLE border=0 cellPadding=0 cellSpacing=0 width=490>
+        <TBODY>
+        <TR>
+          <TD>设置或者检索对象是否被提供。<BR>可能的值为block、none、inline、list-item、table-header-group、table-footer-group。<BR>该特性可读写，块要素默认值为block，内联要素默认值为inline；层叠样式表（CSS）属性不可继承。<BR><BR>参考：《动态HTML参考和开发应用大全》（人民邮电出版社 
+            Microsoft Corporation著 北京华中兴业科技发展有限公司译）<BR><BR><A 
+            href="http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/display.asp?frame=true" 
+            target=_blank>点击此处</A>可参阅微软<A href="http://msdn.microsoft.com/" 
+            target=_blank>MSDN在线</A>上的解释。 
+</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></BODY></HTML>

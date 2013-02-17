@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Index</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<SCRIPT type=text/javascript>
+<!--
+var ie5 = (document.all && document.getElementsByTagName);
+var step = 0;
+function setSB(v, el, inforEl, message) {
+if (ie5 || document.readyState == "complete") {
+filterEl = el.children[0];
+valueEl = el.children[1];
+
+if (filterEl.style.pixelWidth > 0) {
+var filterBackup = filterEl.style.filter;
+filterEl.style.filter = "";
+filterEl.style.filter = filterBackup;
+}
+
+filterEl.style.width = v + "%";
+valueEl.innerText = v + "%";
+inforEl.innerText = message;
+}
+}
+function setSBByStep(v, el, inforEl, message) {
+if (ie5 || document.readyState == "complete") {
+step = step + v;
+filterEl = el.children[0];
+valueEl = el.children[1];
+
+if (filterEl.style.pixelWidth > 0) {
+var filterBackup = filterEl.style.filter;
+filterEl.style.filter = "";
+filterEl.style.filter = filterBackup;
+}
+
+filterEl.style.width = step + "%";
+valueEl.innerText = step + "%"
+inforEl.innerText = message;
+}
+}
+
+function fakeProgress(v, el) {
+if (v >= 101)
+location.href="Athena Studio.htm";
+else {
+setSB(v, el, infor, " 页面加载中……");
+window.setTimeout("fakeProgress(" + (v + 1) + ", document.all['" + el.id + "'])", 60);
+}
+}
+
+//-->
+</SCRIPT>
+
+<META content="MSHTML 5.00.3502.5390" name=GENERATOR></HEAD>
+<BODY onload=fakeProgress(0,sb)>
+<DIV align=center>
+<DIV id=sb 
+style="BACKGROUND: #00ccff; BORDER-BOTTOM: #cccccc 1px solid; BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; HEIGHT: 14px; TEXT-ALIGN: left; WIDTH: 400px">
+<DIV id=sbChild1 
+style="FILTER: Alpha(Opacity=0, FinishOpacity=80, Style=1, StartX=0, StartY=0, FinishX=100, FinishY=0); HEIGHT: 12px; OVERFLOW: hidden; POSITION: absolute; WIDTH: 100%">
+<DIV style="BACKGROUND: #000000; WIDTH: 100%" height:12px; overflow: 
+hidden></DIV></DIV>
+<DIV 
+style="COLOR: white; FONT-FAMILY: arial; FONT-SIZE: 10px; HEIGHT: 14px; POSITION: absolute; TEXT-ALIGN: center; WIDTH: 400px"></DIV></DIV>
+<P></P>
+<DIV id=infor 
+style="COLOR: #999999; FONT-FAMILY: arial; FONT-SIZE: 11px; HEIGHT: 14px; POSITION: relative; TEXT-ALIGN: center; WIDTH: 100%"></DIV></DIV></BODY></HTML>
